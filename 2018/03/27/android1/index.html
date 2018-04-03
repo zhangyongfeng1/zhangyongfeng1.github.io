@@ -18,7 +18,7 @@
 
   <!--Open Graph Title-->
   
-      <meta property="og:title" content="先从看得到的入手——探究活动(Activity)"/>
+      <meta property="og:title" content="anroid开发—探究活动(Activity)"/>
   
   <!--Open Graph Description-->
   
@@ -37,7 +37,7 @@
 
   <!-- Title -->
   
-  <title>先从看得到的入手——探究活动(Activity) - zhangyongfeng</title>
+  <title>anroid开发—探究活动(Activity) - zhangyongfeng</title>
 
 
   <link rel="shortcut icon" href="https://zhangyongfeng1.github.io/images/zyf_img/drive.png">
@@ -117,7 +117,7 @@
         <!-- Title date & tags -->
         <div class="post-header">
           <h1 class="entry-title">
-            先从看得到的入手——探究活动(Activity)
+            anroid开发—探究活动(Activity)
             
           </h1>
           <p class="posted-on">
@@ -139,30 +139,20 @@
         </div>
         <!-- Post Main Content -->
         <div class="entry-content">
-          <p><img src="/images/zyf_img/drive.png" alt="Folder"></p>
-<hr>
-<p>本文是以Android Studio为开发工具，<br>&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍</p>
+          <h2 id="1、写在前面"><a href="#1、写在前面" class="headerlink" title="1、写在前面"></a>1、写在前面</h2><p>本文是以Android Studio为开发工具，<br>&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍</p>
 <blockquote>
-<p><a href="https://pan.baidu.com/s/1GP4sv4NLIvTo8gECTkOxQg" target="_blank" rel="noopener">电子书pdf百度云下载地址:</a><br>密码:rx3g<br><a href="https://pan.baidu.com/s/1KlEbLkiDXHXLVd-yjDiFgA" target="_blank" rel="noopener">Android Studio运行的测试代码百度云下载地址:</a><br>密码:5rlq</p>
+<p><a href="https://pan.baidu.com/s/1GP4sv4NLIvTo8gECTkOxQg" target="_blank" rel="noopener">电子书pdf百度云下载地址:</a><br>密码:rx3g<br><a href="https://zhangyongfeng1.github.io/dowland/MyApplication1.zip" target="_blank" rel="noopener">Android Studio运行的测试代码下载地址:</a></p>
 </blockquote>
-<hr>
-<h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><hr>
-<p>Activity 是一种可以包括界面的组件，主要用于和用户的交互，<br>一个应用程序可以有0个或多个活动</p>
-<hr>
-<h3 id="2、手动创建活动"><a href="#2、手动创建活动" class="headerlink" title="2、手动创建活动"></a>2、手动创建活动</h3><hr>
-<p>使项目在Project模式下面，</p>
+<h2 id="2、介绍"><a href="#2、介绍" class="headerlink" title="2、介绍"></a>2、介绍</h2><p>Activity 是一种可以包括界面的组件，主要用于和用户的交互，<br>一个应用程序可以有0个或多个活动。</p>
+<h2 id="3、手动创建活动"><a href="#3、手动创建活动" class="headerlink" title="3、手动创建活动"></a>3、手动创建活动</h2><p>使项目在Project模式下面，</p>
 <ol>
-<li>选中在app/src/main/java/下面的包中右键点击，</li>
-<li>再选择New-&gt;Activity-&gt;Empty Activity 创建一个活动的对话框 会有以下选项<br>Generate Layout File 表示会自动为创建的活动生成一个对应的layout布局文件（可不选）<br>Launcher Activity 表示会自动将当前创建的活动设置为当前项目的主活动 （有主活动时不选）<br>Backwards Compatibility 表示为项目启用向下兼容的模式（这个要选）</li>
-<li>点击finish 之后会自动生成一个java文件（会自动继承AppCompatActivity这个类，并且重写 onCrate()方法）</li>
+<li>选中在app/src/main/java/下面的包中右键点击；</li>
+<li>再选择New-&gt;Activity-&gt;Empty Activity 创建一个活动的对话框 会有以下选项：<br>Generate Layout File 表示会自动为创建的活动生成一个对应的layout布局文件（可不选）；<br>Launcher Activity 表示会自动将当前创建的活动设置为当前项目的主活动 （有主活动时不选）；<br>Backwards Compatibility 表示为项目启用向下兼容的模式（这个要选）；</li>
+<li>点击finish 之后会自动生成一个java文件（会自动继承AppCompatActivity这个类，并且重写 onCrate()方法）。</li>
 </ol>
-<hr>
-<h3 id="3、创建和加载布局"><a href="#3、创建和加载布局" class="headerlink" title="3、创建和加载布局"></a>3、创建和加载布局</h3><h4 id="3-1-Android-设计原则："><a href="#3-1-Android-设计原则：" class="headerlink" title="3.1 Android 设计原则："></a>3.1 Android 设计原则：</h4><hr>
-<p>逻辑和视图分离，最好一个活动都能对应一个布局</p>
-<p>（Activity 是处理逻辑用javap实现，layout 负责显示内容用xmL实现）</p>
-<hr>
-<h4 id="3-2-创建一个布局"><a href="#3-2-创建一个布局" class="headerlink" title="3.2 创建一个布局"></a>3.2 创建一个布局</h4><hr>
-<p>使项目在Project模式下面，</p>
+<h2 id="4、创建和加载布局"><a href="#4、创建和加载布局" class="headerlink" title="4、创建和加载布局"></a>4、创建和加载布局</h2><h3 id="4-1、-Android-设计原则："><a href="#4-1、-Android-设计原则：" class="headerlink" title="4.1、 Android 设计原则："></a>4.1、 Android 设计原则：</h3><p>逻辑和视图分离，最好一个活动都能对应一个布局；</p>
+<p>（Activity 是处理逻辑用javap实现，layout 负责显示内容用xmL实现）。</p>
+<h3 id="4-2、-创建一个布局"><a href="#4-2、-创建一个布局" class="headerlink" title="4.2、 创建一个布局"></a>4.2、 创建一个布局</h3><p>使项目在Project模式下面：</p>
 <ol>
 <li><p>选中在app/src/main/res/layout目录下面的包中右键点击，</p>
 </li>
@@ -176,80 +166,38 @@
 <ol start="4">
 <li>点击完成，会自动生成一个xml文件</li>
 </ol>
-<hr>
-<h4 id="3-3-可视化布局编辑器"><a href="#3-3-可视化布局编辑器" class="headerlink" title="3.3 可视化布局编辑器"></a>3.3 可视化布局编辑器</h4><hr>
-<p>屏幕中央区域显示预览的效果</p>
-<p>最下方有两个切换的选项</p>
-<p>Design:     显示当前的可视化布局</p>
-<p>Text:    是显示xml文件的内容</p>
-<hr>
-<h4 id="3-4-在布局中添加一个按扭"><a href="#3-4-在布局中添加一个按扭" class="headerlink" title="3.4 在布局中添加一个按扭"></a>3.4 在布局中添加一个按扭</h4><hr>
-<p>添加的button元素中中添加了几个属性</p>
+<h3 id="4-3、-可视化布局编辑器"><a href="#4-3、-可视化布局编辑器" class="headerlink" title="4.3、 可视化布局编辑器"></a>4.3、 可视化布局编辑器</h3><p>屏幕中央区域显示预览的效果；</p>
+<p>最下方有两个切换的选项：</p>
 <ul>
-<li><p>android:id (定义一个唯一个标识符）</p>
+<li><p>Design:     显示当前的可视化布局</p>
 </li>
-<li><p>android:layout_width(指定当前的宽度，使用match_parent表示和当前父元素一样宽）</p>
-</li>
-<li><p>android:layout_height(指定当前的高度，使用wrap_content表示适应控件里的内容)</p>
-</li>
-<li><p>android:text(指定元素中显示的内容)</p>
+<li><p>Text:    是显示xml文件的内容</p>
 </li>
 </ul>
-<hr>
-<h4 id="3-5-在一个活动（Activity）中加载一个布局-Layout"><a href="#3-5-在一个活动（Activity）中加载一个布局-Layout" class="headerlink" title="3.5 在一个活动（Activity）中加载一个布局(Layout)"></a>3.5 在一个活动（Activity）中加载一个布局(Layout)</h4><hr>
-<p>在onCreate()方法中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setContentView(R.layout.frist_layout);</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h4 id="3-6-关于R文件"><a href="#3-6-关于R文件" class="headerlink" title="3.6 关于R文件"></a>3.6 关于R文件</h4><hr>
-<p>项目中任何添加任何资源都会在R文件中生成一个相应的资源id</p>
+<h3 id="4-4、-在布局中添加一个按扭"><a href="#4-4、-在布局中添加一个按扭" class="headerlink" title="4.4、 在布局中添加一个按扭"></a>4.4、 在布局中添加一个按扭</h3><p>添加的button元素中中添加了几个属性</p>
+<ul>
+<li><p>android:id (定义一个唯一个标识符）；</p>
+</li>
+<li><p>android:layout_width(指定当前的宽度，使用match_parent表示和当前父元素一样宽）；</p>
+</li>
+<li><p>android:layout_height(指定当前的高度，使用wrap_content表示适应控件里的内容)；</p>
+</li>
+<li><p>android:text(指定元素中显示的内容)；</p>
+</li>
+</ul>
+<h3 id="4-5、-在一个活动（Activity）中加载一个布局-Layout"><a href="#4-5、-在一个活动（Activity）中加载一个布局-Layout" class="headerlink" title="4.5、 在一个活动（Activity）中加载一个布局(Layout)"></a>4.5、 在一个活动（Activity）中加载一个布局(Layout)</h3><p>在onCreate()方法中添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setContentView(R.layout.frist_layout);</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-6、-关于R文件"><a href="#4-6、-关于R文件" class="headerlink" title="4.6、 关于R文件"></a>4.6、 关于R文件</h3><p>项目中任何添加任何资源都会在R文件中生成一个相应的资源id</p>
 <p>(因此可以直接使用setContentView()方法加载R.layout.frist_layout)</p>
-<hr>
-<h4 id="3-7-在AndroidManifest文件中注册"><a href="#3-7-在AndroidManifest文件中注册" class="headerlink" title="3.7 在AndroidManifest文件中注册"></a>3.7 在AndroidManifest文件中注册</h4><hr>
-<p>所有的活动activity,要在AndroidMainifest.xml中进行注册才会生效（？）</p>
-<p>AndroidMainifest.xml文件在项目中的位app/src/main/AndroidManifest.xml</p>
-<p><activity>标签中使用android:name来表示指定具体注册那个活动 </activity></p>
-<p>注：不过要是只有一个活动，而没有配</p>
-<p>置主活动的话，代码在android studio 中是跑不起来的，会抛弃出一串异常的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.api.tasks.TaskExecutionException: Execution failed for task …</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h4 id="3-7-1-设置主活动的方法"><a href="#3-7-1-设置主活动的方法" class="headerlink" title="3.7.1 设置主活动的方法"></a>3.7.1 设置主活动的方法</h4><p>在<activity>标签内部加入<intent-filter>标签，并在标签中添加</intent-filter></activity></p>
+<h3 id="4-7、-在AndroidManifest文件中注册"><a href="#4-7、-在AndroidManifest文件中注册" class="headerlink" title="4.7、 在AndroidManifest文件中注册"></a>4.7、 在AndroidManifest文件中注册</h3><p>所有的活动activity,要在AndroidMainifest.xml中进行注册才会生效；</p>
+<p>AndroidMainifest.xml文件在项目中的位app/src/main/AndroidManifest.xml；</p>
+<p><activity>标签中使用android:name来表示指定具体注册那个活动；</activity></p>
+<p>注：不过要是只有一个活动，而没有配置主活动的话，代码在android studio 中是跑不起来的，会抛弃出一串异常的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.gradle.api.tasks.TaskExecutionException: Execution failed for task …</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-8、-设置主活动的方法"><a href="#4-8、-设置主活动的方法" class="headerlink" title="4.8、 设置主活动的方法"></a>4.8、 设置主活动的方法</h3><p>在<activity>标签内部加入<intent-filter>标签，并在标签中添加</intent-filter></activity></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;action android:name=“android.intent.action.MAIN”/&gt;</span><br></pre></td></tr></table></figure>
 <p>和<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;category android:name=“android.intent.category.LAUNCHER”/&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这两名声明即可</p>
-<hr>
-<h5 id="3-7-2-启动器的标题"><a href="#3-7-2-启动器的标题" class="headerlink" title="3.7.2 启动器的标题"></a>3.7.2 启动器的标题</h5><hr>
-<p>除此之外如果给主活动指定一个label的话，你会发现标题栏中的内容也变成了启动器中的<br>应用程序显示的名称</p>
-<p>如果应用程序没有声明任何一个活动作为主活动，这个程序仍然可以正常安装，可是你无法<br>在启动器中看到或者打开这个程序，这类程序一般都是作为第三方服务供其他应用内部调用，<br>如支付宝快捷支付服务（你可新建一个没有活动的项目试下，我试了下运行的时候<br>会报下了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error running “app” Default Activity not found 项目并没有跑起来）</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h5 id="3-7-3-在活动中使用Toast（android-友好提醒方式）"><a href="#3-7-3-在活动中使用Toast（android-友好提醒方式）" class="headerlink" title="3.7.3 在活动中使用Toast（android 友好提醒方式）"></a>3.7.3 在活动中使用Toast（android 友好提醒方式）</h5><hr>
-<p>在程序中可以使用它将一些短小的信息通知给用户，这些信息在一段时间后会自动消失。<br>示例：<br>需要定义一个弹出Toast的触发点，在一个页面上定义一个按钮，点击这个按钮提示一个Tast</p>
-<p>在onCreate()方法中添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package com.bignerdranch.android.myapplication1;</span><br><span class="line"></span><br><span class="line">import android.support.v7.app.AppCompatActivity;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.util.Log;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.widget.Button;</span><br><span class="line">import android.widget.Toast;</span><br><span class="line"></span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">//        setContentView(R.layout.activity_main);</span><br><span class="line">//        日志打印</span><br><span class="line">        setContentView(R.layout.first_layout);//先布局后面才可以签听对象</span><br><span class="line"></span><br><span class="line">        Log.v(&quot;MainActivity1&quot;,&quot;zyf_@@@@@@@@@@@@--verbose&quot;);</span><br><span class="line">        Log.d(&quot;MainActivity2&quot;,&quot;zyf_@@@@@@@@@@@@--debug&quot;);</span><br><span class="line">        Log.i(&quot;MainActivity3&quot;,&quot;zyf_@@@@@@@@@@@@--info&quot;);</span><br><span class="line">        Log.w(&quot;MainActivity4&quot;,&quot;zyf_@@@@@@@@@@@@--warn&quot;);</span><br><span class="line">        Log.e(&quot;MainActivity5&quot;,&quot;zyf_@@@@@@@@@@@@--error&quot;);</span><br><span class="line">        Button button1  = (Button) findViewById(R.id.button_1);</span><br><span class="line">        button1.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">                   public void onClick(View v) &#123;</span><br><span class="line">                       Toast.makeText(MainActivity.this, &quot;you clicked Button 1&quot;, Toast.LENGTH_SHORT).show();</span><br><span class="line">                    &#125;</span><br><span class="line">                                   &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注：要记得引入button 类</p>
-<ol>
-<li>在活动中通过调用方法 findViewById()方法获取到布局文件中定义的元素（<br>示例中我们传入R.id.button_1 （这个值是在layout 文件中通过android:id 来得到）按扭的实例。</li>
-<li>findViewById()返回的是一个View对象，要向下转型将它转成Button对象</li>
-<li>拿到Button对象之后，可以通过调用setOnClickListenter()方法为按钮注册一个监听器。点击按钮之后就会执行监听器中的onClick()方法，在onClick()方法中调用Toast</li>
-<li>Toast的用法 通过静态方法makeText()创建出一个Toast对象，然后调用show()将Toast 显示出来就可以了<br>makeText()方法定义中要传入的三个参数<br>第一个参数是Context,Toast上下文，由于活动本身就是一个Context对象，因此这里直接传入MainActivity.this<br>就可以了<br>第二个参数是显示文本的内容<br>第三个参数是Toast显示的时长，这里内置了两个常量<br>Toast.LENGTH_SHORT<br>Toast.LENGTH_LONG</li>
-</ol>
-<hr>
-<h4 id="3-8-在活动中使用Menu-菜单"><a href="#3-8-在活动中使用Menu-菜单" class="headerlink" title="3.8 在活动中使用Menu(菜单)"></a>3.8 在活动中使用Menu(菜单)</h4><hr>
-<p>添加一个菜单<br>1、在res目录下面新建一个menu文件夹，<br>2、然后再menu下面再新建一个名收main的菜单文件（右击menu文件—&gt;new —&gt;Menu resourse file）生成一个main.xml文件</p>
-<p>输入内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=&quot;@+id/add_item&quot;</span><br><span class="line">        android:title=&quot;Add&quot;/&gt;</span><br><span class="line">    &lt;item</span><br><span class="line">        android:id=&quot;@+id/remove_item&quot;</span><br><span class="line">        android:title=&quot;Remove&quot;/&gt;</span><br><span class="line">&lt;/menu&gt;</span><br></pre></td></tr></table></figure>
-<p>其中 <item>标签下面<br>android:id 表示给这个菜单定义一个唯一的标识符<br>android:title 表示给这个菜音定一个名称</item></p>
-<p>然后回到主活动MainActivity.java中重写如下方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//重写方法</span><br><span class="line">public boolean onCreateOptionsMenu(Menu menu)&#123;</span><br><span class="line">    getMenuInflater().inflate(R.menu.main,menu);</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>1、通过getMenuInflater()方法能得到MenuInflater 对象，</p>
-<p>2、再调用inflate() 方法可以组给当前活动创建菜单，</p>
-<p>3、inflate()方法上送两个参数</p>
-<p>第一个是指定通过资源文件创建menu菜单 （菜单R地址）</p>
-<p>第二个指定要添加的对象（方法传入的menu 对象）</p>
-<p>4、onCreateOptionsMenu() 返回true表示显示菜单</p>
-<p>再重写方法加入弹框提示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//重写方法 弹框提示</span><br><span class="line">public boolean onOptionsItemSelected(MenuItem item)&#123;</span><br><span class="line">    switch (item.getItemId())&#123;</span><br><span class="line">        case R.id.add_item:</span><br><span class="line">            Toast.makeText(this,&quot;you clicked add&quot;,Toast.LENGTH_SHORT);</span><br><span class="line">            break;</span><br><span class="line">        case R.id.remove_item:</span><br><span class="line">            Toast.makeText(this,&quot;you clicked remove&quot;,Toast.LENGTH_SHORT);</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>通过item.getItemId()<br>来判断点击了那个菜单</p>
-<hr>
-<h4 id="3-9-销毁一个活动"><a href="#3-9-销毁一个活动" class="headerlink" title="3.9 销毁一个活动"></a>3.9 销毁一个活动</h4><hr>
-<p>一般按一下返加按钮（back）键就可以销毁当前的活动</p>
-<p>也可以通过Activity类的 finish()方法调用来销毁当前的活动</p>
+<p>这两名声明即可。</p>
+<h3 id="4-9、-启动器的标题"><a href="#4-9、-启动器的标题" class="headerlink" title="4.9、 启动器的标题"></a>4.9、 启动器的标题</h3><p>除此之外如果给主活动指定一个label的话，你会发现标题栏中的内容也变成了启动器中的应用程序显示的名称。</p>
+<p>如果应用程序没有声明任何一个活动作为主活动，这个程序仍然可以正常安装，可是你无法在启动器中看到或者打开这个程序，这类程序一般都是作为第三方服务供其他应用内部调用，如支付宝快捷支付服务。</p>
 
         </div>
       </article>
@@ -258,7 +206,7 @@
     <div class="container">
       
 <section id="comment">
-  <!-- <h1 class="title">留言</h1> -->
+  <!-- <h1 class="title">Comments</h1> -->
 
   
 </section>
@@ -269,12 +217,12 @@
     <div class="nav-links">
       
         <div class="nav-previous">
-          <a href="/2018/03/28/react1/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
+          <a href="/2018/03/28/react1/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
         </div>
       
       
         <div class="nav-next">
-          <a href="/2018/03/26/更新时间树/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+          <a href="/2018/03/26/更新时间树/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
         </div>
       
     </div>
@@ -298,7 +246,7 @@
     </div>
     <div class="col-1-3">
       <aside>
-        <h1 class="widget-title">与我联系</h1>
+        <h1 class="widget-title">Contact</h1>
         <div class="widget-text">
           
             
@@ -316,7 +264,7 @@
     </div>
     <div class="col-1-3">
       <aside>
-        <h1 class="widget-title">站内搜索</h1>
+        <h1 class="widget-title">Search</h1>
         <div class="widget-text">
           <form onSubmit="return appDaily.submitSearch('')">
             <p>
