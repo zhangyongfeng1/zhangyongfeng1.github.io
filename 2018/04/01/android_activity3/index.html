@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhangyongfeng">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="anroid开发—探究活动(Activity)3"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="zhangyongfeng"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>anroid开发—探究活动(Activity)3 - zhangyongfeng</title>
+
+
+  <link rel="shortcut icon" href="https://zhangyongfeng1.github.io/images/zyf_img/drive.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://zhangyongfeng1.github.io/images/zyf_img/drive.png" alt="zhangyongfeng" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            anroid开发—探究活动(Activity)3
+            
+          </h1>
+          <p class="posted-on">
+          2018-04-01
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/android/" rel="tag">
+                  android
+                </a>
+              
+                <a href="/tags/Activity/" rel="tag">
+                  Activity
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <h2 id="1、写在前面"><a href="#1、写在前面" class="headerlink" title="1、写在前面"></a>1、写在前面</h2><p>本文是以Android Studio为开发工具，<br>&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍</p>
+<blockquote>
+<p><a href="https://pan.baidu.com/s/1GP4sv4NLIvTo8gECTkOxQg" target="_blank" rel="noopener">电子书pdf百度云下载地址:</a><br>密码:rx3g<br><a href="https://zhangyongfeng1.github.io/dowland/MyApplication1.zip" target="_blank" rel="noopener">Android Studio运行的测试代码下载地址:</a></p>
+</blockquote>
+<h2 id="2、介绍"><a href="#2、介绍" class="headerlink" title="2、介绍"></a>2、介绍</h2><p>功能：从启动器的主活动进入其他的活动,</p>
+<p>Inten 分为显示Intent 和隐式 Intent</p>
+<p>Intent 是android 程序中各组件的交互方式，</p>
+<p>1、可以指明当前组件想要执行的动作<br>2、要不同组件之间传递数据<br>3、可被用于启动活动、启动服务，以及发送广播等（下面以启动活动为例）</p>
+<h2 id="3、使用显示intent"><a href="#3、使用显示intent" class="headerlink" title="3、使用显示intent"></a>3、使用显示intent</h2><p>1、新建一个activity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">新建一个空的活动Activity,命名SecondActivity,并勾选Generate Layout File,</span><br><span class="line"></span><br><span class="line">自动创建布局文件，给布局文件命名second_layout</span><br></pre></td></tr></table></figure></p>
+<p>2、 编辑second_layout.xml,使用linearLayout,改成如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">              android:orientation=&quot;vertical&quot;</span><br><span class="line">              android:layout_width=&quot;match_parent&quot;</span><br><span class="line">              android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/button_3&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;Button 3&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、 在页面定义一个Button 3按钮</p>
+<p>4、查看 AndroidMainifest.xml 中活动的注册情况，Android Studio 会自动完成</p>
+<p>5、启动第二个活动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Intent 有多个构造函数的重载</span><br><span class="line">其中Intent(Context packageContext, Class&lt;?&gt;cls )</span><br><span class="line">第一个参数Context 要求提供一个启动活动的上下文</span><br><span class="line">第二个参数class 则是指定想要启动的目标活动</span><br><span class="line">Activity类 中有个启动活动的方法，这个方法接收一个Intent 参数。</span><br><span class="line">6、点击一个按钮，跳转到下一个活动页面</span><br></pre></td></tr></table></figure></p>
+<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Button button3  = (Button) findViewById(R.id.button_3);</span><br><span class="line">button3.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Intent intent = new Intent(MainActivity.this,SecondActivity.class);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="4、使用隐式Intent"><a href="#4、使用隐式Intent" class="headerlink" title="4、使用隐式Intent"></a>4、使用隐式Intent</h2><p>不明确指出想要启动那个活动<br>指定一系列抽象的action、category 信息<br>交由系统去分析这个Intent.找出合适的活动去启动</p>
+<p>运行隐式Intent示例：<br>1、为SecondActivity活动指定action /category<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.SecondActivity&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;com.example.activitytext.ACTION_START&quot;/&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure></p>
+<p>action： 表示当前活动可以响应com.example.activitytext.ACTION_START 这个action<br>category： 包括一些附加信息</p>
+<p>2、在first_layout.xml添加一个按钮<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">    android:id=&quot;@+id/button_4&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:text=&quot;用隐式intent跳转到下一个活动页面&quot;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、在MainActivity.java 添加按钮对应监听方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Button button4  = (Button) findViewById(R.id.button_4);</span><br><span class="line">button4.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Intent intent = new Intent(&quot;android.intent.action.ACTION_START&quot;);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>4、运行代码<br>category 这里是用的默认有name，所以可以不用指category 就能启动</p>
+<p>注：一个intent 可以指定多个category</p>
+<p>运行指定多个category示例：<br>1、修改AndroidMainfest.xml文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.SecondActivity&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.ACTION_START&quot;/&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.MY_CATEGORY&quot;/&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.修改MainActivity.java文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Button button4  = (Button) findViewById(R.id.button_4);</span><br><span class="line">button4.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Intent intent = new Intent(&quot;android.intent.action.ACTION_START&quot;);</span><br><span class="line">        intent.addCategory(&quot;android.intent.category.MY_CATEGORY&quot;);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="5、更多隐式Intent用法"><a href="#5、更多隐式Intent用法" class="headerlink" title="5、更多隐式Intent用法"></a>5、更多隐式Intent用法</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用隐式intent，不仅可以启动自已的程序内活动，还可以启动其他程序的活动，这使行Adnroid多个应用程序之间功能共享成功了可能，</span><br></pre></td></tr></table></figure>
+<p>示例：<br>在应用程中展示一个网页，调用系统浏览器来打开网页<br>1、新添加一个按钮<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">    android:id=&quot;@+id/button_5&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:text=&quot;用隐式intent调用系统浏览器来打开网页&quot;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、添加这个按钮的监听事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Button button5  = (Button) findViewById(R.id.button_5);</span><br><span class="line">button5.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Intent intent = new Intent(Intent.ACTION_VIEW);</span><br><span class="line">        intent.setData(Uri.parse(&quot;http://www.baidu.com&quot;));</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>可以通过在注册表中组给活动的<date>标签 添加android:scheme 数据协议为http 协议 这样ThridActivity 就可以响应一个网页。？</date></p>
+</blockquote>
+<p>示例：<br>添加一个按钮，跳转调用系统打电话的页面<br>1、在layout文件中添加一个按钮<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">    android:id=&quot;@+id/button_6&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:text=&quot;用隐式intent调用系统打电话功能&quot;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2、在java中添加响应事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Button button6  = (Button) findViewById(R.id.button_6);</span><br><span class="line">button6.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        Intent intent = new Intent(Intent.ACTION_DIAL);</span><br><span class="line">        //Intent.ACTION_DIAL为 android 的内置活动</span><br><span class="line">        intent.setData(Uri.parse(&quot;tel:10086&quot;));</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="6、向下一个活动传递数据"><a href="#6、向下一个活动传递数据" class="headerlink" title="6、向下一个活动传递数据"></a>6、向下一个活动传递数据</h2><blockquote>
+<p>启动活动数据传递思路<br>运用Intent 中putExtra()方法的重载，可以将数据暂存在Intent中，启动另一个活动后，只需要把这些数据再从Intent 中取出就可以了。</p>
+</blockquote>
+<p>示例：<br>在MainActivity 中的一个字符串，想把这个字符串传递到SecondActivity 中去<br>1、MainActivityk中修改代码如下：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Button button3  = (Button) findViewById(R.id.button_3);</span><br><span class="line">button3.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">    public void onClick(View v)&#123;</span><br><span class="line">        //设置一个变量</span><br><span class="line">        String data = &quot;Hello SecondActivity&quot;;</span><br><span class="line">        Intent intent = new Intent(MainActivity.this,SecondActivity.class);</span><br><span class="line">        intent.putExtra(&quot;data_name &quot;,data);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>2、在第二个活动中将数据取出并打印出来；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line">    setContentView(R.layout.second_layout);</span><br><span class="line">    Intent intent = getIntent();</span><br><span class="line">    String data1 = intent.getStringExtra(&quot;data_name&quot;);</span><br><span class="line">    Log.d(&quot;SecondActivity&quot;, data1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="7、返回数据给上一个活动"><a href="#7、返回数据给上一个活动" class="headerlink" title="7、返回数据给上一个活动"></a>7、返回数据给上一个活动</h2><blockquote>
+<p>Activity 还有一个startActivtyForResult() 也用于启动活动的方法，在活动销毁的时候返回一个结果给上一个活动<br>startActivityForResult()方法接收两个参数<br>第一个参数是：Intent<br>第二个参数是：请求码</p>
+</blockquote>
+<p>1、在MainActivity活动中设定一个监听跳到secondActivity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> Button button3  = (Button) findViewById(R.id.button_3);</span><br><span class="line">        button3.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">            public void onClick(View v)&#123;</span><br><span class="line">                //设置一个变量</span><br><span class="line">                String data = &quot;Hello SecondActivity&quot;;</span><br><span class="line">                Intent intent = new Intent(MainActivity.this,SecondActivity.class);</span><br><span class="line">                intent.putExtra(&quot;data_name11&quot;, data);</span><br><span class="line">//                 startActivity(intent);</span><br><span class="line">                startActivityForResult(intent,1);</span><br><span class="line">                //用startActivityForResult，启动secondActivity活动，在活动销毁的时候返回一个结果给上一个活动</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>2、在secondActivity，新增一个按钮，并定义一个监听的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">    android:id=&quot;@+id/button_2&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    android:text=&quot;返回上一页面，并返回第二个页面的参数&quot;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//      点击返回上一个活动页面，并返回数据</span><br><span class="line">        Button button2 = (Button)  findViewById(R.id.button_2);</span><br><span class="line">        button2.setOnClickListener(new View.OnClickListener()&#123;</span><br><span class="line">            public void onClick(View v)&#123;</span><br><span class="line">            Intent intent = new Intent();</span><br><span class="line">            intent.putExtra(&quot;date_return&quot;,&quot;Hello fristActivity&quot;);</span><br><span class="line">            setResult(RESULT_OK,intent);</span><br><span class="line"></span><br><span class="line">            String data2 = intent.getStringExtra(&quot;date_return&quot;);</span><br><span class="line">            Log.i(&quot;SecondActivity_back&quot;, data2);</span><br><span class="line"></span><br><span class="line">            finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+<p>3、在MainActivity，重写onActivityResult（）方法，接收secondActivity返回的参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//重写方法，secondActivity 活动关闭后会调用</span><br><span class="line">protected void onActivityResult(int requestCode,int resultCode,Intent data)&#123;</span><br><span class="line">    switch (requestCode)&#123;</span><br><span class="line">        case 1:</span><br><span class="line">            if (resultCode == RESULT_OK)&#123;</span><br><span class="line">                String returnedData = data.getStringExtra(&quot;date_return&quot;);</span><br><span class="line">                Log.i(&quot;MainActivity&quot;,returnedData);</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        default:</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>设置back()返回事件</p>
+<blockquote>
+<p>重写onBackPressed()</p>
+</blockquote>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//重写返回的方法</span><br><span class="line">public void onBackPressed()&#123;</span><br><span class="line">    Intent intent = new Intent();</span><br><span class="line">    intent.putExtra(&quot;data_return&quot;,&quot;Hello back FirstActivity&quot;);</span><br><span class="line">    setResult(RESULT_OK,intent);</span><br><span class="line">    finish();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/03/28/react1/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          https://zhangyongfeng1.github.io/
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/zhangyongfeng1" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="http://weibo.com/13828477873" class="icon icon-weibo" target="_blank">weibo</a>
+            
+              <a href="mailto:503977995@qq.com" class="icon icon-mail" target="_blank">mail</a>
+            
+              <a href="503977995" class="icon icon-qq" target="_blank">qq</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>zhangyongfeng &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
