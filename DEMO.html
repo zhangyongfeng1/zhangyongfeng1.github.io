@@ -1,0 +1,84 @@
+html5 上传文件功能的代码实现   
+Html5代码：  
+<form id="form1" enctype="multipart/form-data" method="post" action="http://121.14.204.68:36161/eqp/upload?strOperator=chenzl"> 
+	<div class="row"> 
+		<label for="fileToUpload">选择文件</label> 
+		<input type="file" name="fileName" id="fileName" onchange="fileSelected();"/>     
+	</div> 
+	<div id="fileName"></div>
+	<div id="fileSize"></div> 
+	<div id="fileType"></div> 
+	<div class="row"> 
+		上传者：
+		<input type="text" name="name" id="name"/> 
+		<input type="button" onclick="uploadFile()" value="上传" /> 
+		<input type="button" onclick="cancleUploadFile()" value="取消" />     
+	</div> 
+	<div id="progressNumber"></div>
+</form>  
+
+
+
+
+Javascrpit代码：   
+<script type="text/javascript">  ar xhr = new XMLHttpRequest();  
+ //监听选择文件信息 
+ function fileSelected() { 
+  //HTML5文件API操作 
+  var file = document.getElementById('fileName').files[0];   if(file) { 
+   var fileSize = 0; 
+   if(file.size >1024 * 1024) 
+    fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';    else 
+    fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';  
+   document.getElementById('fileName').innerHTML = 'Name: '+ file.name; 
+
+
+
+
+    require.async(['wkcommon:widget/ui/lib/sio/sio.js'], function(sio) { var url = 'https://cpro.baidustatic.com/cpro/ui/c.js'; sio.callByBrowser( url, function () { BAIDU_CLB_fillSlotAsync('u2845605','cpro_u2845605'); } ); }); 
+
+
+
+
+
+
+
+   document.getElementById('fileSize').innerHTML = 'Size: '+ fileSize; 
+   document.getElementById('fileType').innerHTML = 'Type: '+ file.type;   }  }  
+ //上传文件 
+ function uploadFile() { 
+  var fd = new FormData(); 
+  //关联表单数据,可以是自定义参数 
+  fd.append("name", document.getElementById('name').value);   fd.append("fileName", 
+document.getElementById('fileName').files[0]);  
+  //监听事件 
+  xhr.upload.addEventListener("progress", uploadProgress, false); 
+  xhr.addEventListener("load", uploadComplete, false);   xhr.addEventListener("error", uploadFailed, false);   xhr.addEventListener("abort", uploadCanceled, false);   //发送文件和表单自定义参数   xhr.open("POST", 
+"http://121.14.204.68:36161/eqp/upload?strOperator=chenzl");   xhr.send(fd);  } 
+ //取消上传 
+ function cancleUploadFile() {   xhr.abort();  }  
+ //上传进度 
+ function uploadProgress(evt) {   if(evt.lengthComputable) { 
+   var percentComplete = Math.round(evt.loaded * 100 / evt.total); 
+   document.getElementById('progressNumber').innerHTML = percentComplete.toString() + '%';   } else { 
+   document.getElementById('progressNumber').innerHTML = 'unable to compute';   }  }  
+
+
+
+
+ (window.cproArray = window.cproArray || []).push({ id: "u3054369" });
+
+
+
+
+
+
+
+ //上传成功响应 
+ function uploadComplete(evt) {   //服务断接收完文件返回的结果 
+  alert(evt.target.responseText);  }  
+ //上传失败 
+ function uploadFailed(evt) {   alert("上传失败");  } 
+ //取消上传 
+ function uploadCanceled(evt) {   alert("您取消了本次上传.");  } 
+</script> 
