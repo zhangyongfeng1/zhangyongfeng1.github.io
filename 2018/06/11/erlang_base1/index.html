@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="https://zhangyongfeng1.github.io/">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhangyongfeng">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="erlang-基本语法（1）"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="https://zhangyongfeng1.github.io/" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="zhangyongfeng"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>erlang-基本语法（1） - zhangyongfeng</title>
+
+
+  <link rel="shortcut icon" href="https://zhangyongfeng1.github.io/images/zyf_img/drive.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://zhangyongfeng1.github.io/images/zyf_img/drive.png" alt="zhangyongfeng" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            erlang-基本语法（1）
+            
+          </h1>
+          <p class="posted-on">
+          2018-06-11
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/erlang/" rel="tag">
+                  erlang
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <p>##写在前面<br>个人感觉erlang自已在网络上的入门比较杂，因此自已根据网络的博客（文末会说明引用的链接）和自已有限的了解做一些整理发布在网络上，有错误的地方欢迎指正，交流，共同进步。</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p><img src="https://upload-images.jianshu.io/upload_images/6841945-2243e6e21b9b06d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自已梳理erlang学习脑图"></p>
+<h3 id="为什么要用到erlang？"><a href="#为什么要用到erlang？" class="headerlink" title=".为什么要用到erlang？"></a>.为什么要用到erlang？</h3><p>高并发（）<br>高容错（）<br>软实时（修改一个erl文件时，不需要全部文件重新编译，只需要编译修改的那个文件即可）</p>
+<h3 id="什么时候要用到erlang？"><a href="#什么时候要用到erlang？" class="headerlink" title=".什么时候要用到erlang？"></a>.什么时候要用到erlang？</h3><p>高并发请求的服务可以用到。</p>
+<h3 id="erlang可以用来干什么？"><a href="#erlang可以用来干什么？" class="headerlink" title=".erlang可以用来干什么？"></a>.erlang可以用来干什么？</h3><p>可以搭建成一个web的服务器。</p>
+<h2 id="安装（网上有教程这里先不说明）"><a href="#安装（网上有教程这里先不说明）" class="headerlink" title="安装（网上有教程这里先不说明）"></a>安装（网上有教程这里先不说明）</h2><h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>（用％来注释）</p>
+<h3 id="入门语法示例"><a href="#入门语法示例" class="headerlink" title="入门语法示例:"></a>入门语法示例:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">➜ ~ erl Erlang/OTP 20 [erts-9.3] [source] [64-bit] [smp:4:4] [ds:4:4:10] [async-threads:10] [hipe] [kernel-poll:false] [dtrace] Eshell V9.3 (abort with ^G)</span><br><span class="line"> 1&gt; io:format(&quot;hello world!~n&quot;).</span><br><span class="line"> hello world! </span><br><span class="line">ok </span><br><span class="line">2&gt; 1 + 1.</span><br><span class="line">2 </span><br><span class="line">3&gt; q(). </span><br><span class="line">ok </span><br><span class="line">➜ ~</span><br></pre></td></tr></table></figure>
+<p>第一个是io:format(“hello world!~n”).表示输出一串hello world的字符串，<br>其中的~n表示的是换行处理，<br>输出的ok，是函数的返回值。</p>
+<p>第二个是一个加法的运算;</p>
+<p>第三个是退出当前erlang的shell命令窗口;也可以在erlang shell（erlang交互命令行） 中执行halt().来退出命令窗口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9&gt; halt().</span><br><span class="line">➜  erlang</span><br></pre></td></tr></table></figure>
+<h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title=".基本数据类型"></a>.基本数据类型</h2><h3 id="1、Numbers数字运算法则"><a href="#1、Numbers数字运算法则" class="headerlink" title=".1、Numbers数字运算法则"></a>.1、Numbers数字运算法则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">1&gt; 2 + 15. ％加法</span><br><span class="line">17 </span><br><span class="line">2&gt; 49 * 100. ％乘法</span><br><span class="line">4900 </span><br><span class="line">3&gt; 1892 - 1472. ％减法</span><br><span class="line">420 </span><br><span class="line">4&gt; 5 / 2. %% 最常用的浮点数除法 </span><br><span class="line">2.5 </span><br><span class="line">5&gt; 5 div 2. %% div 是整除 </span><br><span class="line">2 </span><br><span class="line">6&gt; 5 rem 2. %% rem 是取余运算 </span><br><span class="line">1</span><br><span class="line"> %% 数字前面可以用 ‘#’ 来标注其 ‘Base’</span><br><span class="line"> %% 语法：Base#Value %% 默认的 Base 10 … </span><br><span class="line">％％从其他进制转为十进制</span><br><span class="line">10&gt; 2#101010. %% 2 进制的 101010 </span><br><span class="line">42 </span><br><span class="line">11&gt; 8#0677. %% 8 进制的 0677 </span><br><span class="line">447 </span><br><span class="line">12&gt; 16#AE. %% 16 进制的 AE </span><br><span class="line">174</span><br></pre></td></tr></table></figure>
+<h3 id="2、Boolean布尔数据类型（与或非）"><a href="#2、Boolean布尔数据类型（与或非）" class="headerlink" title=".2、Boolean布尔数据类型（与或非）"></a>.2、Boolean布尔数据类型（与或非）</h3><p>atom 类型的 true 和 false 两个值，被用作布尔处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1&gt; true and false. %% 逻辑 并 </span><br><span class="line">false </span><br><span class="line">2&gt; false or true. %% 逻辑 或 </span><br><span class="line">true </span><br><span class="line">3&gt; true xor false. %% 逻辑 异或 </span><br><span class="line">true </span><br><span class="line">4&gt; not false. %% 逻辑 非 </span><br><span class="line">true </span><br><span class="line">5&gt; not (true and true). </span><br><span class="line">false</span><br></pre></td></tr></table></figure></p>
+<p>还有两个与 and 和 or 类似的操作：andalso和 orelse。区别是 and 和 or 不论左边的运算结果是真还是假，都会执行右边的操作。而 andalso 和 orelse是短路的，意味着右边的运算不一定会执行。</p>
+<p>来看一下比较：</p>
+<h3 id="3、比较"><a href="#3、比较" class="headerlink" title=".3、比较"></a>.3、比较</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">6&gt; 5 =:= 5. %% =:= 是&quot;严格相等&quot;运算符，== &quot;是大概相等&quot; </span><br><span class="line">true </span><br><span class="line">7&gt; 1 =:= 0. </span><br><span class="line">false </span><br><span class="line">8&gt; 1 =/= 0. %% =/= 是&quot;严格不等&quot;运算符，/= &quot;是相差很多&quot; </span><br><span class="line">true </span><br><span class="line">9&gt; 5 =:= 5.0. </span><br><span class="line">false </span><br><span class="line">10&gt; 5 == 5.0. </span><br><span class="line">true </span><br><span class="line">11&gt; 5 /= 5.0. </span><br><span class="line">false</span><br></pre></td></tr></table></figure>
+<p>一般如果懒得纠结太多，用 =:= 和 =/= 就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">12&gt; 1 &lt; 2. </span><br><span class="line">true </span><br><span class="line">13&gt; 1 &lt; 1. </span><br><span class="line">false </span><br><span class="line">14&gt; 1 &gt;= 1. %% 大于等于 </span><br><span class="line">true </span><br><span class="line">15&gt; 1 =&lt; 1. %% 注意这个 &quot;小于等于&quot; 的写法，= 在前面。因为 =&gt; 还有其他的用处。。 </span><br><span class="line">true </span><br><span class="line">17&gt; 0 == false. %% 数字和 atom 类型是不相等的 </span><br><span class="line">false </span><br><span class="line">18&gt; 1 &lt; false. </span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<p>虽然不同的类型之间可以比较，也有个对应的顺序，但一般情况用不到的:<br>number &lt; atom &lt; reference &lt; fun &lt; port &lt; pid &lt; tuple &lt; list &lt; bit string</p>
+<p>##写在后面<br>引用网络博客内容：<br><a href="https://www.jianshu.com/p/b45eb9314d1e" target="_blank" rel="noopener">https://www.jianshu.com/p/b45eb9314d1e</a>        （30 分钟学 Erlang (一)）<br><a href="https://www.w3cschool.cn/erlang/tohb1p5z.html" target="_blank" rel="noopener">https://www.w3cschool.cn/erlang/tohb1p5z.html</a>      （w3cschool erlang教程）</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+      
+        <div class="nav-next">
+          <a href="/2018/05/02/android_store1/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          https://zhangyongfeng1.github.io/
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/zhangyongfeng1" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="http://weibo.com/13828477873" class="icon icon-weibo" target="_blank">weibo</a>
+            
+              <a href="mailto:503977995@qq.com" class="icon icon-mail" target="_blank">mail</a>
+            
+              <a href="503977995" class="icon icon-qq" target="_blank">qq</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>zhangyongfeng &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
