@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zhangyongfeng</title>
+  
+  <subtitle>zhangyongfeng&#39;s1</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-06-12T08:32:29.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>zhangyongfeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>erlang-基本语法_2、模块和函数、内置函数、在erlang shell中运行文件</title>
+    <link href="http://yoursite.com/2018/06/12/erlang_base2/"/>
+    <id>http://yoursite.com/2018/06/12/erlang_base2/</id>
+    <published>2018-06-12T06:27:25.000Z</published>
+    <updated>2018-06-12T08:32:29.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;本文主要是以一个erlang的学习记录，有错误的地方欢迎指正。&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="http://yoursite.com/tags/erlang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>erlang-基本语法_1、io:format输出、基本数据类型</title>
+    <link href="http://yoursite.com/2018/06/11/erlang_base1/"/>
+    <id>http://yoursite.com/2018/06/11/erlang_base1/</id>
+    <published>2018-06-11T05:27:25.000Z</published>
+    <updated>2018-06-12T08:32:13.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;本文主要是以一个erlang的学习记录，有错误的地方欢迎指正。&lt;/p&gt;
+&lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="http://yoursite.com/tags/erlang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_6.数据存储_1.文件存储</title>
+    <link href="http://yoursite.com/2018/05/02/android_store1/"/>
+    <id>http://yoursite.com/2018/05/02/android_store1/</id>
+    <published>2018-05-02T04:27:25.000Z</published>
+    <updated>2018-05-24T12:57:38.000Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studi为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="file" scheme="http://yoursite.com/tags/file/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建基于yaws的erlang_web服务_1_环境搭建</title>
+    <link href="http://yoursite.com/2018/04/26/yaws.web1/"/>
+    <id>http://yoursite.com/2018/04/26/yaws.web1/</id>
+    <published>2018-04-26T04:51:25.000Z</published>
+    <updated>2018-04-26T04:58:57.000Z</updated>
+    
+    <summary type="html">
+    
+      搭建基于yaws的erlang_web服务
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="http://yoursite.com/tags/erlang/"/>
+    
+      <category term="yaws" scheme="http://yoursite.com/tags/yaws/"/>
+    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_4-活动的生命周期探究</title>
+    <link href="http://yoursite.com/2018/04/10/android_activity4/"/>
+    <id>http://yoursite.com/2018/04/10/android_activity4/</id>
+    <published>2018-04-10T08:25:25.000Z</published>
+    <updated>2018-04-10T12:02:45.000Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studi为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_3-Intent和数据传递</title>
+    <link href="http://yoursite.com/2018/04/01/android_activity3/"/>
+    <id>http://yoursite.com/2018/04/01/android_activity3/</id>
+    <published>2018-04-01T08:25:25.000Z</published>
+    <updated>2018-04-10T11:59:13.000Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_3-活动括展</title>
+    <link href="http://yoursite.com/2018/03/27/android_activity2/"/>
+    <id>http://yoursite.com/2018/03/27/android_activity2/</id>
+    <published>2018-03-27T07:25:25.000Z</published>
+    <updated>2018-04-10T11:59:12.000Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_1--活动入门</title>
+    <link href="http://yoursite.com/2018/03/26/android_activity1/"/>
+    <id>http://yoursite.com/2018/03/26/android_activity1/</id>
+    <published>2018-03-26T08:25:25.000Z</published>
+    <updated>2018-05-24T12:50:10.000Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="http://yoursite.com/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="http://yoursite.com/tags/android/"/>
+    
+      <category term="Activity" scheme="http://yoursite.com/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>变更记录</title>
+    <link href="http://yoursite.com/2018/03/26/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%E6%A0%91/"/>
+    <id>http://yoursite.com/2018/03/26/更新时间树/</id>
+    <published>2018-03-26T04:12:12.000Z</published>
+    <updated>2018-06-12T08:35:02.000Z</updated>
+    
+    <summary type="html">
+    
+      记录更新记录
+    
+    </summary>
+    
+      <category term="recode" scheme="http://yoursite.com/categories/recode/"/>
+    
+    
+      <category term="更新" scheme="http://yoursite.com/tags/%E6%9B%B4%E6%96%B0/"/>
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="plan" scheme="http://yoursite.com/tags/plan/"/>
+    
+  </entry>
+  
+</feed>
