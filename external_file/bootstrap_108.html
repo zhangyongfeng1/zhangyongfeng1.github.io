@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 列排序</title>
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+
+		<h1>Bootstrap 列排序</h1>
+
+		<div class='row'>
+			<h4>排序前</h4>
+			<div class='col-md-4' style='background-color: blue'>
+				<p>1111111111</p>
+			</div>
+			<div class='col-md-8' style='background-color: red'>
+				<p>2222222222</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<h4>排序后</h4>
+			<div class='col-md-4 col-md-push-8' style='background-color: green'>
+				<p>1111111111</p>
+			</div>
+			<div class='col-md-8 col-md-pull-4' style='background-color: blue'>
+				<p>2222222222</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
