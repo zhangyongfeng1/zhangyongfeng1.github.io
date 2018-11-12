@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bootstrap 表单 支持的表单控件</title>
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="padding: 20px;">
+	<div class="">
+		<!-- 输入框(input) -->
+		<h4>输入框(input)</h4>
+		<hr>
+		<form role="form">
+			<div class="form-group">
+				<label for='name'>标签</label>
+				<input type="text" class="form-control" placeholder='文本输入'>
+			</div>
+		</form>
+		<!-- 文本框（Textarea） -->
+		<h4>文本框（Textarea）</h4>
+		<hr>
+		<form role="form">
+			<div class="form-group">
+				<label for='name'>文本框</label>
+				<textarea class="form-control" rows="3"></textarea> 
+			</div>
+		</form>
+		<!-- 复选框（Checkbox）和单选框（Radio） -->
+		<h4>复选框（Checkbox）和单选框（Radio）</h4>
+		<hr>
+		<div>
+			<label for='name'>默认的复选框和单选按钮的实例</label>
+			<div class='checkbox'>
+				<label><input type="checkbox" value="">选项 1</label>
+			</div>
+			<div class='checkbox'>
+				<label><input type="checkbox" value="">选项 2</label>
+			</div>
+			<div clss="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">选项 1
+				</label>
+			</div>
+			<div clss="radio">
+				<label>
+					<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">选项 2 选择它将会取消选择选项
+				</label>
+			</div>
+			<label for="name">内联的复选框和单选按钮的实例</label>
+			<div>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="inlineCheckbox1" value="option1" name="">选项 1
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="inlineCheckbox2" value="option1" name="">选项 2
+				</label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="inlineCheckbox3" value="option1" name="">选项 3
+				</label>
+				<br>
+				<label class="radio-inline">
+					<input type="radio" name="optionsRadiosinline" id="optionsRadios3" value='option1' checked="">选项 1
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="optionsRadiosinline" id="optionsRadios4" value='option2' checked="">选项 2
+				</label>			
+			</div>
+		</div>
+		<!-- 选择框（Select） -->
+		<h4>选择框（Select）</h4>
+		<hr>
+			<form role="form">
+				<div class="form-group">
+					<label for='name'>选择列表</label>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+					<br>
+					<label for='name'>选择列表</label>
+					<select multiple class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+			</form>
+		<!-- 静态控件 -->
+		<h4>静态控件</h4>
+		<hr>
+		<form class="form-horizontal" role='form'>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">email</label>
+				<div class="col-sm-10">
+					<p class="form-control-static">email@example.com</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">密码</label>
+				<div class="col-sm-10">
+					<input type="password" class="form-control" id='inputPassword' placeholder="请输入密码">
+				</div>
+			</div>
+		</form>
+		<!-- 表单控件状态 -->
+		<h4>表单控件状态</h4>
+		<hr>
+		<form class="form-horizontal" role='form'>
+			<div class="form-group">
+				<label class='col-sm-2 control-label'>聚焦</label>
+				<div class="col-sm-10">
+					<input type="text" name="" class="form-control" id='focusedInput' value="该输入框获得焦点...">
+				</div>
+			</div>
+			<!-- 禁用 disabled-->
+			<div class="form-group">
+				<label for='inputPassword' class='col-sm-2 control-label' >禁用</label>
+				<div class="col-sm-10">
+					<input type="text" class='form-control' id="disabledInput" placeholder="该输入框禁止输入" disabled>
+				</div>
+			</div>
+			<!-- 禁用输入（Fieldset -->
+			<fieldset disabled>
+				<div class="form-group">
+					<label for="disabledTextInput" class='col-sm-2 control-label'>禁用输入（Fieldset disabled）</label>
+					<div class="col-sm-10">
+						<input type="text" id="disabledTextInput" class='form-control' placeholder="禁止输入" name="">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for='disabledSelect' class="col-sm-2 control-label">禁用选择菜单（Fieldset disabled）</label>
+					<div class="col-sm-10">
+						<select id="disabledselect" class="form-control">
+							<option>禁止选择</option>
+						</select>
+					</div>
+				</div>				
+			</fieldset>
+			<!-- 输入成功 -->
+			<div class="form-group has-success">
+				<label class="col-sm-2 control-label" for='inputSuccess'>输入成功</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id='inputSuccess' name="">
+				</div>
+			</div>
+			<!-- 输入警告 -->
+			<div class="form-group has-warning">
+				<label class="col-sm-2 control-label" for='inputWarning'>输入警告</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id='inputWarning' name="">
+				</div>
+			</div>
+			<!-- 输入错误 -->
+			<div class="form-group has-error">
+				<label class="col-sm-2 control-label" for='inputError'>输入错误</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id='inputError' name="">
+				</div>
+			</div>
+		</form>
+		<!-- 表单控件大小 -->
+		<h4>表单控件大小</h4>
+		<hr>
+		<form role="form">
+			<div class="form-group">
+				<input type="text" class="form-control input-lg" name="" placeholder=".input-lg">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder='默认输入' name="">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control input-sm" placeholder='.input-sm' name="">
+			</div>
+			<div class="form-group"></div>
+
+			<div class="form-group">
+				<select class='form-control input-lg'>
+					<option value="">.input_lg</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<select class='form-control'>
+					<option value="">默认选择</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<select class='form-control input-sm'>
+					<option value="">.input-sm</option>
+				</select>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-2">
+					<input type="text" class="form-control" placeholder=".col-lg-2">
+				</div>
+				<div class="col-lg-3">
+					<input type="text" class="form-control" placeholder=".col-lg-3">
+				</div>
+				<div class="col-lg-4">
+					<input type="text" class="form-control" placeholder=".col-lg-4">
+				</div>
+			</div>
+		</form>
+
+		<!-- 表单帮助文本 -->
+		<h4>表单帮助文本</h4>
+		<hr>
+		<form role="fomr">
+			<span>帮助文本实例</span>
+			<input type="text" class='form-control' placeholder="" name="">
+			<span class="help-block">一个较长的帮助文本块，超过一行，需要扩展到下一行。本实例中的帮助文本总共两行。
+			</span>
+		</form>
+
+	</div>
+</body>
+</html>
