@@ -16,3 +16,6 @@ https://zhangyongfeng1.github.io/external_file/
 
 --------------2019/04/28-------------
 重新下载git代码，再次提交 
+
+用 git@github.com:zhangyongfeng1/zhangyongfeng1.github.io.git
+clone 代码，提交代码，测试是否要输入密码
