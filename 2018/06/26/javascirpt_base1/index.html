@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="javaScript基础示例">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="zhangyongfeng">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="javaScript_基础1"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="javaScript基础示例" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="zhangyongfeng"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>javaScript_基础1 - zhangyongfeng</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="zhangyongfeng" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            javaScript_基础1
+            
+          </h1>
+          <p class="posted-on">
+          2018-06-26
+          </p>
+          <div class="tags-links">
+            
+              
+                <a href="/tags/javascript/" rel="tag">
+                  javascript
+                </a>
+              
+            
+          </div>
+        </div>
+        <!-- Post Main Content -->
+        <div class="entry-content">
+          <!-- TOC -->
+<ul>
+<li><a href="#1-javascript简介">1. javaScript简介</a><ul>
+<li><a href="#11-javascript简单示列textdemohtml">1.1. javaScript简单示列：textdemo.html</a></li>
+<li><a href="#12-以引入文件形式调用javascript文件示例">1.2. 以引入文件形式调用javaScript文件示例：</a></li>
+<li><a href="#13-后台调试日志打卬和页面输出示例">1.3. 后台调试日志打卬和页面输出示例：</a></li>
+<li><a href="#14-定义变量获取变量类型判断变量否有赋值">1.4. 定义变量，获取变量类型，判断变量否有赋值</a></li>
+<li><a href="#15-拆分一个变量转换为对象打印出来">1.5. 拆分一个变量，转换为对象打印出来</a></li>
+<li><a href="#16-字符串比较方式">1.6. 字符串比较方式：==</a></li>
+<li><a href="#17-打印出99乘法表">1.7. 打印出99乘法表</a></li>
+<li><a href="#18-数组javascript">1.8. 数组JavaScript</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="1-javaScript简介"><a href="#1-javaScript简介" class="headerlink" title="1. javaScript简介"></a>1. javaScript简介</h1><h2 id="1-1-javaScript简单示列：textdemo-html"><a href="#1-1-javaScript简单示列：textdemo-html" class="headerlink" title="1.1. javaScript简单示列：textdemo.html"></a>1.1. javaScript简单示列：textdemo.html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">		alert(&quot;text&quot;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-以引入文件形式调用javaScript文件示例："><a href="#1-2-以引入文件形式调用javaScript文件示例：" class="headerlink" title="1.2. 以引入文件形式调用javaScript文件示例："></a>1.2. 以引入文件形式调用javaScript文件示例：</h2><p>在textdemo.html目录下再新建一个文件夹命名为js,再新建一个文件命名为demo.js<br>demo.js 内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&quot;text&quot;);</span><br></pre></td></tr></table></figure>
+<p>textdemo.html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; src=&quot;./js/demo.js&quot;&gt;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-3-后台调试日志打卬和页面输出示例："><a href="#1-3-后台调试日志打卬和页面输出示例：" class="headerlink" title="1.3. 后台调试日志打卬和页面输出示例："></a>1.3. 后台调试日志打卬和页面输出示例：</h2><p>textdemo.html</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt;</span><br><span class="line">		document.write(&quot;&lt;h1&gt;hello world&lt;/h1&gt;&quot;);</span><br><span class="line">		//通过javascript向页面输出HTML代码</span><br><span class="line">		//输出document.write为不可控</span><br><span class="line">  		console.log(&quot;这是后台输出！&quot;);</span><br><span class="line">  		//后台调轼通用</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-定义变量，获取变量类型，判断变量否有赋值"><a href="#1-4-定义变量，获取变量类型，判断变量否有赋值" class="headerlink" title="1.4. 定义变量，获取变量类型，判断变量否有赋值"></a>1.4. 定义变量，获取变量类型，判断变量否有赋值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt; </span><br><span class="line">		var num = 10;// 定义变量类型 number</span><br><span class="line">		var aa ;// 定义没值的变量类型 undefined</span><br><span class="line">		var bolue = false;</span><br><span class="line">		var string1 = &quot;string&quot;; </span><br><span class="line">		</span><br><span class="line">		console.log(typeof num);</span><br><span class="line">		console.log(typeof aa);</span><br><span class="line">		console.log(typeof bolue);</span><br><span class="line">		console.log(typeof string1);</span><br><span class="line"></span><br><span class="line">		document.write(&quot;&lt;h1&gt;&quot; + (typeof num) + &quot;&lt;/h1&gt;&quot;);</span><br><span class="line">		document.write(&quot;&lt;h1&gt;&quot; + (typeof aa) + &quot;&lt;/h1&gt;&quot;);</span><br><span class="line">		</span><br><span class="line">		//判断变量是否undefined</span><br><span class="line">		if (aa == undefined)&#123;</span><br><span class="line">			alert(&quot;num 的变量类型没有内容！undefined&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//判断变量是否false 变量没有值同为underfined 和 布尔类型的false</span><br><span class="line">		if (!aa)&#123;</span><br><span class="line">			alert(&quot;num 的变量类型没有内容！false&quot;);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			alert(&quot;num 的变量类型有内容！true&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-5-拆分一个变量，转换为对象打印出来"><a href="#1-5-拆分一个变量，转换为对象打印出来" class="headerlink" title="1.5. 拆分一个变量，转换为对象打印出来"></a>1.5. 拆分一个变量，转换为对象打印出来</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> &lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt; </span><br><span class="line">		var num = &quot;hello world ni hao&quot;;//定义变量</span><br><span class="line">		var result = num.split(&quot; &quot;);//根据空格拆分变量，新生成的为一个对象；</span><br><span class="line">	   //var num = &quot;192.168.1.1&quot;;//定义变量</span><br><span class="line">		//var result = num.split(&quot;.&quot;);</span><br><span class="line">	   document.write(&quot;&lt;h1&gt;result变量的类型：&quot; + (typeof result) + &quot;&lt;/h1&gt;&quot;);</span><br><span class="line">		//打卬对result 的类型</span><br><span class="line">		console.log(result);</span><br><span class="line">		//在后台打卬result的内容</span><br><span class="line"></span><br><span class="line">		for (var x = 0 ; x &lt; result.length ; x ++ )&#123;</span><br><span class="line">			document.write(&quot;&lt;h1&gt;&quot; + result[x] + &quot;&lt;/h1&gt;&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-6-字符串比较方式："><a href="#1-6-字符串比较方式：" class="headerlink" title="1.6. 字符串比较方式：=="></a>1.6. 字符串比较方式：==</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt; </span><br><span class="line">		var stra = &apos;hello&apos;;</span><br><span class="line">		var strb = &quot;hello&quot;;</span><br><span class="line"></span><br><span class="line">		alert(stra == strb);</span><br><span class="line"></span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-7-打印出99乘法表"><a href="#1-7-打印出99乘法表" class="headerlink" title="1.7. 打印出99乘法表"></a>1.7. 打印出99乘法表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt; </span><br><span class="line">		document.write(&quot;&lt;table border=&apos;1&apos;&gt;&quot;);</span><br><span class="line">		for(var x =1;x &lt;=9 ;x++)&#123;</span><br><span class="line">			document.write(&quot;&lt;tr&gt;&quot;);</span><br><span class="line">			for (var y =1 ;y &lt;= x ;y++)&#123;</span><br><span class="line">				document.write(&quot;&lt;td&gt;&quot; + x + &quot;*&quot; + y + &quot;=&quot; +(x*y) +&quot;&lt;/td&gt;&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">			for (var y =1 ;y &lt;=9-x;y++)&#123;</span><br><span class="line">				document.write(&quot;&lt;td&gt;&amp;nbsp;&lt;/td&gt;&quot;)</span><br><span class="line">			&#125;	</span><br><span class="line">			document.write(&quot;&lt;/tr&gt;&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		document.write(&quot;&lt;/table&gt;&quot;);</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-8-数组JavaScript"><a href="#1-8-数组JavaScript" class="headerlink" title="1.8. 数组JavaScript"></a>1.8. 数组JavaScript</h2><p>数组JavaScript为数组提供一个length属性来得到数组的长度<br>定义语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr1=[2,5,6]; //定义时直接给数组元素赋值</span><br><span class="line">var arr2=[]; //定义一个空数组</span><br><span class="line">var arr3=new Array(); //定义一个空数组并通过索引来赋值</span><br><span class="line">arr3[0]=1;</span><br><span class="line">arr3[3]=&quot;abc&quot;;</span><br></pre></td></tr></table></figure>
+<p>数组特点：<br>1.数组长度可变，总长度=’数组的最大索引值’+1；<br>2.同一数组中的元素类型可互不相同；<br>3.当访问未赋值的数组元素时，该元素值为undefined，不会数组越界。<br>数据创建示列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;javascript text&lt;/title&gt;</span><br><span class="line">	&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">	&lt;!-- 设置编码为UTF-8 --&gt;</span><br><span class="line">	&lt;script type=&quot;text/javascript&quot; &gt; </span><br><span class="line">		//动态数组</span><br><span class="line">		var result = new Array();</span><br><span class="line">		result[0] = &quot;hello&quot;;</span><br><span class="line">		result[1] = 100;</span><br><span class="line">		result[2] = true;</span><br><span class="line"></span><br><span class="line">		console.log(result);</span><br><span class="line"></span><br><span class="line">		for (var x = 0 ; x &lt; result.length; x++)&#123;</span><br><span class="line">			document.write(&quot;&lt;h1&gt;&quot; + result[x] +&quot;--&gt;&quot; + (typeof result[x]) +&quot;&lt;/h1&gt; &quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//初始代数据为string类型并打印</span><br><span class="line">		var result1 = new Array(&apos;hello&apos;,&quot;world&quot;,&quot;!&quot;);</span><br><span class="line"></span><br><span class="line">		console.log(result1);</span><br><span class="line"></span><br><span class="line">		for (var x = 0 ; x &lt; result1.length; x++)&#123;</span><br><span class="line">			document.write(&quot;&lt;h1&gt;&quot; + result1[x] +&quot;--&gt;&quot; + (typeof result1[x]) +&quot;&lt;/h1&gt; &quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div&gt;你好，世界！&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>注：在定义javascript变量时不使用var进行定义时，为全局变量（几乎是不用的）</p>
+
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">Comments</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/2018/06/26/erlang_do1/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> Older Posts</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2018/06/12/erlang_base2/" rel="prev">Newer Posts <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          https://zhangyongfeng1.github.io/
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/GallenHu" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>zhangyongfeng &copy; 2019</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
