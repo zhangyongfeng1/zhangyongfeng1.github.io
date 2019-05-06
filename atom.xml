@@ -277,7 +277,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/03/26/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%E6%A0%91/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/26/更新时间树/</id>
     <published>2018-03-26T04:12:12.000Z</published>
-    <updated>2019-05-06T03:17:21.719Z</updated>
+    <updated>2019-05-06T03:26:54.680Z</updated>
     
     <summary type="html">
     
@@ -293,6 +293,26 @@
       <category term="记录" scheme="https://zhangyongfeng1.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
       <category term="plan" scheme="https://zhangyongfeng1.github.io/tags/plan/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于hexo搭建GitHub静态博客</title>
+    <link href="https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/"/>
+    <id>https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/</id>
+    <published>2018-03-23T11:05:00.000Z</published>
+    <updated>2018-04-26T04:56:43.000Z</updated>
+    
+    <summary type="html">
+    
+      搭建博客参考教程
+    
+    </summary>
+    
+      <category term="蔡向炜" scheme="https://zhangyongfeng1.github.io/categories/%E8%94%A1%E5%90%91%E7%82%9C/"/>
+    
+    
+      <category term="hexo" scheme="https://zhangyongfeng1.github.io/tags/hexo/"/>
     
   </entry>
   
