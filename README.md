@@ -32,3 +32,15 @@ branch 修改的代码
 dev-zyf3
 
 fix bug 101 1o1o1
+
+
+github 推送代码 
+
+git push github master
+
+
+tencent 推送代码
+
+git push tencent master
+
+
