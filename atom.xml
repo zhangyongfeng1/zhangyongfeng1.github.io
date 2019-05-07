@@ -2,19 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>zhangyongfeng</title>
   
-<<<<<<< HEAD
   <subtitle>zhangyongfeng&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyongfeng1.github.io/"/>
   <updated>2019-05-07T03:34:59.472Z</updated>
-=======
-  <subtitle>zhangyongfeng&#39;s</subtitle>
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="https://zhangyongfeng1.github.io/"/>
-  <updated>2019-05-06T03:16:40.215Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
   <id>https://zhangyongfeng1.github.io/</id>
   
   <author>
@@ -25,7 +17,6 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-<<<<<<< HEAD
     <title>git lfs入门</title>
     <link href="https://zhangyongfeng1.github.io/2019/05/07/git_lfs1/"/>
     <id>https://zhangyongfeng1.github.io/2019/05/07/git_lfs1/</id>
@@ -46,17 +37,11 @@
   </entry>
   
   <entry>
-=======
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     <title>git 入门</title>
     <link href="https://zhangyongfeng1.github.io/2019/05/06/git_1/"/>
     <id>https://zhangyongfeng1.github.io/2019/05/06/git_1/</id>
     <published>2019-05-06T04:00:00.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.808Z</updated>
-=======
-    <updated>2019-05-06T03:16:40.215Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -96,11 +81,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/06/26/javascirpt_base1/"/>
     <id>https://zhangyongfeng1.github.io/2018/06/26/javascirpt_base1/</id>
     <published>2018-06-26T06:27:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.808Z</updated>
-=======
-    <updated>2018-06-27T08:17:11.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -120,11 +101,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/06/12/erlang_base2/"/>
     <id>https://zhangyongfeng1.github.io/2018/06/12/erlang_base2/</id>
     <published>2018-06-12T06:27:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.807Z</updated>
-=======
-    <updated>2018-06-27T08:14:02.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -155,11 +132,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/06/11/erlang_base1/"/>
     <id>https://zhangyongfeng1.github.io/2018/06/11/erlang_base1/</id>
     <published>2018-06-11T05:27:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.807Z</updated>
-=======
-    <updated>2018-06-27T08:13:56.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -190,11 +163,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/05/02/android_store1/"/>
     <id>https://zhangyongfeng1.github.io/2018/05/02/android_store1/</id>
     <published>2018-05-02T04:27:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.807Z</updated>
-=======
-    <updated>2018-06-27T08:13:49.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -216,11 +185,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/04/26/yaws.web1/"/>
     <id>https://zhangyongfeng1.github.io/2018/04/26/yaws.web1/</id>
     <published>2018-04-26T04:51:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.808Z</updated>
-=======
-    <updated>2018-06-27T08:14:19.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -244,11 +209,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/04/10/android_activity4/"/>
     <id>https://zhangyongfeng1.github.io/2018/04/10/android_activity4/</id>
     <published>2018-04-10T08:25:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.807Z</updated>
-=======
-    <updated>2018-06-27T08:13:42.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -270,11 +231,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/04/01/android_activity3/"/>
     <id>https://zhangyongfeng1.github.io/2018/04/01/android_activity3/</id>
     <published>2018-04-01T08:25:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.806Z</updated>
-=======
-    <updated>2018-06-27T08:13:05.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -296,11 +253,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/03/27/android_activity2/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/27/android_activity2/</id>
     <published>2018-03-27T07:25:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.806Z</updated>
-=======
-    <updated>2018-06-27T08:12:16.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -322,11 +275,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/03/26/android_activity1/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/26/android_activity1/</id>
     <published>2018-03-26T08:25:25.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.806Z</updated>
-=======
-    <updated>2019-05-06T06:57:19.244Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -348,11 +297,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/03/26/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%E6%A0%91/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/26/更新时间树/</id>
     <published>2018-03-26T04:12:12.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T03:37:30.704Z</updated>
-=======
-    <updated>2019-05-06T03:26:54.680Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
@@ -376,11 +321,7 @@
     <link href="https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/</id>
     <published>2018-03-23T11:05:00.000Z</published>
-<<<<<<< HEAD
     <updated>2019-05-07T02:19:37.807Z</updated>
-=======
-    <updated>2018-04-26T04:56:43.000Z</updated>
->>>>>>> 52729e42ca494af8b943657fe54e34858b801433
     
     <summary type="html">
     
