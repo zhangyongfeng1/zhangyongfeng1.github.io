@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyongfeng1.github.io/"/>
-  <updated>2023-01-13T03:33:48.060Z</updated>
+  <updated>2023-01-16T09:58:22.650Z</updated>
   <id>https://zhangyongfeng1.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/16/ajax/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/16/ajax/</id>
+    <published>2023-01-16T09:36:51.650Z</published>
+    <updated>2023-01-16T09:58:22.650Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;1-url&quot;&gt;&lt;a href=&quot;#1-url&quot; class=&quot;headerlink&quot; title=&quot;1.url&quot;&gt;&lt;/a&gt;1.url&lt;/h1&gt;&lt;p&gt;url是（ Uniform Resource Locator ）统一资源定位符的缩写。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>小程序发布流程</title>
@@ -41,7 +64,7 @@
     <link href="https://zhangyongfeng1.github.io/2023/01/12/blog_hexo_GitHub_2/"/>
     <id>https://zhangyongfeng1.github.io/2023/01/12/blog_hexo_GitHub_2/</id>
     <published>2023-01-12T02:05:00.000Z</published>
-    <updated>2023-01-13T02:46:22.336Z</updated>
+    <updated>2023-01-13T03:40:20.573Z</updated>
     
     <summary type="html">
     
@@ -308,9 +331,9 @@
     
       <category term="erlang" scheme="https://zhangyongfeng1.github.io/tags/erlang/"/>
     
-      <category term="yaws" scheme="https://zhangyongfeng1.github.io/tags/yaws/"/>
-    
       <category term="web" scheme="https://zhangyongfeng1.github.io/tags/web/"/>
+    
+      <category term="yaws" scheme="https://zhangyongfeng1.github.io/tags/yaws/"/>
     
   </entry>
   
@@ -403,6 +426,30 @@
   </entry>
   
   <entry>
+    <title>常用网址</title>
+    <link href="https://zhangyongfeng1.github.io/2018/03/26/web/"/>
+    <id>https://zhangyongfeng1.github.io/2018/03/26/web/</id>
+    <published>2018-03-26T04:12:12.000Z</published>
+    <updated>2023-01-16T06:32:26.880Z</updated>
+    
+    <summary type="html">
+    
+      记录常用网站
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="常用网址" scheme="https://zhangyongfeng1.github.io/tags/%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80/"/>
+    
+      <category term="网址" scheme="https://zhangyongfeng1.github.io/tags/%E7%BD%91%E5%9D%80/"/>
+    
+      <category term="web" scheme="https://zhangyongfeng1.github.io/tags/web/"/>
+    
+  </entry>
+  
+  <entry>
     <title>变更记录</title>
     <link href="https://zhangyongfeng1.github.io/2018/03/26/%E6%9B%B4%E6%96%B0%E6%97%B6%E9%97%B4%E6%A0%91/"/>
     <id>https://zhangyongfeng1.github.io/2018/03/26/更新时间树/</id>
@@ -423,26 +470,6 @@
       <category term="记录" scheme="https://zhangyongfeng1.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
     
       <category term="plan" scheme="https://zhangyongfeng1.github.io/tags/plan/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于hexo搭建GitHub静态博客</title>
-    <link href="https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/"/>
-    <id>https://zhangyongfeng1.github.io/2018/03/23/blog_hexo_GitHub/</id>
-    <published>2018-03-23T11:05:00.000Z</published>
-    <updated>2019-05-07T02:19:37.807Z</updated>
-    
-    <summary type="html">
-    
-      搭建博客参考教程
-    
-    </summary>
-    
-      <category term="蔡向炜" scheme="https://zhangyongfeng1.github.io/categories/%E8%94%A1%E5%90%91%E7%82%9C/"/>
-    
-    
-      <category term="hexo" scheme="https://zhangyongfeng1.github.io/tags/hexo/"/>
     
   </entry>
   
