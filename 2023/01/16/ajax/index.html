@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="https://zhangyongfeng1.github.io/"><title>ajax小记 | zhangyongfeng</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">ajax小记</h1><a id="logo" href="/.">zhangyongfeng</a><p class="description">zhangyongfeng's blog</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">ajax小记</h1><div class="post-meta">Jan 16, 2023<span> | </span><span class="category"><a href="/categories/张永枫/">张永枫</a></span></div><div class="post-content"><h1 id="1-url"><a href="#1-url" class="headerlink" title="1.url"></a>1.url</h1><p>url是（ Uniform Resource Locator ）统一资源定位符的缩写。</p>
+<h2 id="完整格式-amp-语法"><a href="#完整格式-amp-语法" class="headerlink" title="完整格式&amp;语法"></a>完整格式&amp;语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme:[//[user[:password]@]host[:port]][/path][?query][#fragment]</span><br></pre></td></tr></table></figure>
+<pre><code>scheme：传送协议。 层级URL标记符号(为[//],固定不变) 访问资源需要的凭证信息（可省略）
+host：服务器。（通常为域名，有时为IP地址）
+port：端口号。（以数字方式表示，若为HTTP的默认值“:80”可省略）
+path：路径。（以“/”字符区别路径中的每一个目录名称）
+query：查询。（GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分fragment：开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题）
+?a=1&amp;b=2; 参数
+fragment:锚点/片段。以“#”字符为起点
+</code></pre><h2 id="常见协议"><a href="#常见协议" class="headerlink" title="常见协议"></a>常见协议</h2><pre><code>ftp 21 文件
+ssh 22
+telnet 23
+smtp 25 邮件
+dns 53
+http 80
+</code></pre><h1 id="2-DNS运行原理"><a href="#2-DNS运行原理" class="headerlink" title="2.DNS运行原理"></a>2.DNS运行原理</h1><h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><h3 id="1、作用"><a href="#1、作用" class="headerlink" title="1、作用"></a>1、作用</h3><pre><code>规范数据打包，传递方式
+http/1.1 web 
+</code></pre><h3 id="2、Message-消息-报文"><a href="#2、Message-消息-报文" class="headerlink" title="2、Message 消息 / 报文"></a>2、Message 消息 / 报文</h3><p>在http和服务器之间传递的数据块<br>分类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1、Request Message :客户端请求的消息</span><br><span class="line">2、Response Message :服务器根据客户端请求返回的消息</span><br><span class="line">src </span><br><span class="line">sprict</span><br></pre></td></tr></table></figure>
+<h3 id="3、请求消息（request-message）"><a href="#3、请求消息（request-message）" class="headerlink" title="3、请求消息（request message）"></a>3、请求消息（request message）</h3><h4 id="1、请求起始行"><a href="#1、请求起始行" class="headerlink" title="1、请求起始行"></a>1、请求起始行</h4><p>1、请求方法</p>
+<ul>
+<li><p>1、GET 客户端获取服务器上的资源</p>
+<pre><code>特点：
+1、无请求主体
+2.依靠地址栏传递数据组服务器
+</code></pre></li>
+<li><p>2、POST</p>
+<pre><code>表示客户端想传递数据给服务器
+特点：
+    1、有请求主体
+</code></pre></li>
+<li><p>3、PUT(禁用)</p>
+<pre><code>客户端想把文件放到服务器上
+特点：
+    1、有请求主体
+</code></pre></li>
+<li><p>4、DELETE(禁用)</p>
+<pre><code>客户端想把服务器上的文件删除
+</code></pre></li>
+<li><p>5、HEAD</p>
+<pre><code>表示只想获取指定的响应头
+</code></pre></li>
+<li><p>6、CONNECT</p>
+<pre><code>测试连接
+</code></pre></li>
+<li><p>7、TRACE</p>
+<pre><code>追踪请示路径
+</code></pre></li>
+<li><p>8、OPTIONS</p>
+<p>  选项，保留以后使用</p>
+</li>
+</ul>
+<h4 id="2、请求的url"><a href="#2、请求的url" class="headerlink" title="2、请求的url=="></a>2、请求的url==</h4><pre><code>3、协议 和 版本号
+    http 1.1
+
+    2、请求头
+        1、host:localhost
+
+        2、Connection:keep-alive
+            持久的连接
+        3、User-Agent
+            浏览器的类型
+        4、Cache-Control:mac-age=0
+            缓存信息 max-age不缓存
+        5、Accept-Language:zh-CN
+            服务器能接收的自然语言
+        6、Accept-Encoding:gzip
+            告诉服务器自已可以压缩的类型
+        7、Referer:url
+            告诉服务器请求来自于那个页面
+    3、请求主体(Request Message）
+        Form Date 
+    注意
+        Query String:不算作请求主体，是属于URl的一部分
+    4、响应消息（Response Message）
+        1、响应起始行
+            1、版本号
+                http 1.1
+            2、响应状态码
+                1、1XX
+                    提示信息    
+                2、2XX
+                    200：服务器端成功响应所有的信息ok
+                3、3XX
+                    需要客户端进行重定向
+                    301：永久性重定向
+                    302：临时重定向
+                    304：Not Modified
+                4、4XX
+                    客户端请示错误
+                    404： Not Found 请求资源不存在
+                    403： Forbidden 没有访问权限
+                    405:  Method Not Allowed 请求方法不被允许
+                5、5XX
+                    服务器运行错误
+                    500：服务器内部错误
+                    501：没有实现
+            3、原因短句
+                对状态码的简单解释
+                200：ok
+                404: Not Found
+                ......
+        2、响应消息头
+            1、Content-type
+                响应的主体类型，告诉浏览器，响应数以后有时的格式和类型
+                取值
+                1、text/plain 纯文本
+                2、text/html 文本与网页
+                3、text/css css解析
+                4、application/javascript JS代码片段，按JS的方式运行数据
+                5、application/xml
+                    按xml的方式解析
+                6、application/json
+                    按json的方式解析
+            2、Date
+                日期
+        3、响应主体
+            Preview Response
+            由服务器响应回来的数据
+</code></pre><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><pre><code>    1、缓存的工作原理
+        客户端可以自动保存已访问过的文档的副本
+        当客户端再向同一url发送请求时，可以直接从缓存中取出来，不有再重新发送请求
+    2、优点
+        1、节省流理
+        2、节省更多带宽
+        3、服务资源利用
+        4、降低加载延迟
+    3、与缓存相关的消息头
+        1、cache-control
+            作用：从服务器将文档传来时认为新鲜的秒数
+            取值： 秒数 60、3600 
+            0/on-cache 每次都要重新刷新
+        2、Expires 指定缓存过期的时间，取值是格林尼冶标准时间（GMT）
+        Expries:
+        Expires:0 不需要缓存
+    4、如何在网页中设置消息头
+        http-equiv:消息头名称
+        content：消息头内容
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html&quot;&gt;
+        设置文本为html格式
+        &lt;meta http-equiv=&quot;Cache-Control&quot; content=&quot;on-cache&quot;&gt;
+        设置是否缓存
+3、DOM操作
+    Document Object Model 文档对象模型 操作页面的元素
+    1、使用JS获取页面上的某个元素
+        1、为元素增加ID属性
+            &lt;div id=&quot;d1&quot; &gt;hello world&lt;/div&gt;xfxw
+        2、在JS中，允许通过元素的ID获取页面元素
+
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"元素ID"</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printDiv</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//1、获取元素</span></span><br><span class="line">	<span class="keyword">var</span> elem = <span class="built_in">document</span>.getElementById(<span class="string">"d1"</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(elem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+            elem 就是指定ID值的元素在JS中的表现形式
+    2、修改/获取标记内的内容
+        属性：innerHTML
+            赋值：为某元素的innerHTM属性赋值
+            取值；获取某元素的innerHTML属性
+            ex:
+                elem.innerHTML =&quot;hello world&quot;;
+                console.log(elem.innerHTML);
+            练习:
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"d1"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"getid()"</span> &gt;</span>显示元素id内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"setid()"</span> &gt;</span>设置元素id内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getid</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//   var elem = document.getElementById('d1');</span></span><br><span class="line">    <span class="comment">// console.log(elem.innerHTML);</span></span><br><span class="line">    <span class="comment">//简写</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'d1'</span>).innerHTML;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setid</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">// var elem = document.getElementById('d1');</span></span><br><span class="line">    <span class="comment">//  elem.innerHTML="&lt;h1&gt;alkdlfl&lt;/h1&gt;";</span></span><br><span class="line">    <span class="comment">// console.log(elem.innerHTML);</span></span><br><span class="line">    <span class="comment">//简写</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'d1'</span>).innerHTML=<span class="string">"&lt;h1&gt;alkdlfl&lt;/h1&gt;"</span>;</span><br></pre></td></tr></table></figure>
+<pre><code>3、获取、设置 表单控件的数据
+    文本框,密码框...通过value 属性来获取或设置控件的值
+    ex:
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"uname"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">'showinput()'</span>&gt;</span>显示输入的内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">'setinput()'</span>&gt;</span>改变输入的内容<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showinput</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">'uname'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(ele.value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setinput</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">'uname'</span>);</span><br><span class="line">    ele.value=<span class="string">"111"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>练习:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">'input1'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"show"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"showname()"</span>&gt;</span>显示<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showname</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> input_value = <span class="built_in">document</span>.getElementById(<span class="string">'input1'</span>).value;</span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"show"</span>).innerHTML=<span class="string">"&lt;h1&gt;"</span>+input_value+<span class="string">"&lt;/h1&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>4、简化document.getElementById()
+    //作用 根据指定的ID值，获取对应的HTML元素
+    //参数 id :要获取元素的id值
+    //返回值: 要获取对应的HTML元素
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">$</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">&#125;</span><br><span class="line">&lt;div id=<span class="string">'d2'</span>&gt;hello world&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;button onclick="showText2()"&gt;d2 的值&lt;/</span>button&gt;</span><br><span class="line">&lt;button onclick=<span class="string">"setText2()"</span>&gt;<span class="keyword">set</span> d2 的值&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">function showText2()&#123;</span><br><span class="line">    <span class="keyword">var</span> elem2 = $(<span class="string">'d2'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(elem2.innerHTML);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setText2</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'d2'</span>).innerHTML =<span class="string">"ssss"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>5、HTML 元素的事件
+    事件：在某些特殊情况下，可以被激发的事件
+        onclick 
+    1、文本框、密码框的事件 onblur
+        onblur 事件，鼠标离开时触发的事件
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onblur_t1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(<span class="string">'onblur_s1'</span>).innerHTML = $(<span class="string">"onblur_uname"</span>).value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"onblur_s1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">id</span>=<span class="string">"onblur_uname"</span> <span class="attr">onblur</span>=<span class="string">"onblur_t1()"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>2、onfocus 获取焦点时要执行的操作
+练习:
+    1、文本框失去焦点时，判断文本框中的数据是否为空，如果为空，在span 中提示用户名不能为空，否则提示通过
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'text'</span> <span class="attr">onblur</span>=<span class="string">'span_show1()'</span> <span class="attr">id</span>=<span class="string">"input_v1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">'span_tip'</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">span_show1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>($(<span class="string">'input_v1'</span>).value==<span class="string">""</span>)&#123;</span><br><span class="line">        $(<span class="string">"span_tip"</span>).innerHTML=<span class="string">"用户名不能为空"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        $(<span class="string">"span_tip"</span>).innerHTML=<span class="string">"输入正确"</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>3、body 的事件 -- onload
+    在网页加载时要执行的操作，可以封装在onload 中
+    &lt;input type=&quot;text&quot; id=&quot;onload_uname&quot;&gt;
+    //加载时初始化
+    function body_onload(){
+        $(&quot;onload_uname&quot;).value=&quot;请输入您的用户名称&quot;
+    }
+
+    作业：显示数据
+    tbody
+    编号 书名 作者 操作（修改 删除）
+    1 西游记 吴恩
+    2 水浒传 施耐庵
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;show_table()&quot;&gt;显示数据&lt;/button&gt;</span><br><span class="line">&lt;table border=&quot;1&quot; width=&apos;400px&apos;&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;编号&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;书名&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;作者&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;操作&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody id =&quot;tbody&quot;&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">function show_table()&#123;</span><br><span class="line">    var html =&quot;&quot;;</span><br><span class="line">    html += &quot;&lt;tr&gt;&quot;;</span><br><span class="line">        html += &quot;&lt;td&gt;1&lt;/td&gt;&quot;;</span><br><span class="line">        html += &quot;&lt;td&gt;西游记&lt;/td&gt;&quot;;</span><br><span class="line">        html += &quot;&lt;td&gt;吴承恩&lt;/td&gt;&quot;;</span><br><span class="line">        html += &quot;&lt;td&gt;&quot;;</span><br><span class="line">            html += &quot;&lt;button&gt;修改&lt;/button&gt;&quot;;</span><br><span class="line">            html += &quot;&lt;button&gt;删除&lt;/button&gt;&quot;;</span><br><span class="line">        html += &quot;&lt;/td&gt;&quot;;</span><br><span class="line">    html += &quot;&lt;/tr&gt;&quot;;</span><br><span class="line">    $(&quot;tbody&quot;).innerHTML=html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="3、DOM"><a href="#3、DOM" class="headerlink" title="3、DOM"></a>3、DOM</h1><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><pre><code>onchange 选项发生改变的时候
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&apos;selProvince&apos; onchange=&quot;changeProvince()&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;-1&quot;&gt;=请选择=&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;0&quot;&gt;黑龙江&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;吉林&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;辽宁&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br><span class="line"></span><br><span class="line">function changeProvince()&#123;</span><br><span class="line">    var val = $(&quot;selProvince&quot;).value;</span><br><span class="line">    console.log(&apos;您选中的值:&apos; + val);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//创建一个二维数组</span><br><span class="line">var city = [</span><br><span class="line">    [&apos;哈尔滨&apos;,&apos;heb&apos;],</span><br><span class="line">    [&apos;长春&apos;,&apos;cc&apos;],</span><br><span class="line">    [&apos;沈阳&apos;,&apos;sy&apos;]</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<pre><code>练习1:=========
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=<span class="string">'selProvince'</span> onchange=<span class="string">"changeProvince()"</span>&gt;</span><br><span class="line">    &lt;option value=<span class="string">"-1"</span>&gt;=请选择=&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option value="0"&gt;黑龙江&lt;/</span>option&gt;</span><br><span class="line">    &lt;option value=<span class="string">"1"</span>&gt;吉林&lt;<span class="regexp">/option&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option value="2"&gt;辽宁&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">&lt;select id='selCity'&gt;</span></span><br><span class="line"><span class="regexp">    &lt;option value='-1'&gt;=请先选择省份=&lt;/</span>option&gt;</span><br><span class="line">&lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">function changeProvince()&#123;</span></span><br><span class="line"><span class="regexp">    var val = $("selProvince").value;</span></span><br><span class="line"><span class="regexp">    console.log('您选中的值:' + val);</span></span><br><span class="line"><span class="regexp">    if(val == -1)&#123;</span></span><br><span class="line"><span class="regexp">        var html ="&lt;option&gt;请先选择省份&lt;/</span>option&gt;<span class="string">";</span></span><br><span class="line"><span class="string">        $("</span>selCity<span class="string">").innerHTML = html;</span></span><br><span class="line"><span class="string">    &#125;else&#123;</span></span><br><span class="line"><span class="string">        var html = "</span><span class="string">";</span></span><br><span class="line"><span class="string">        console.log(city[val]);</span></span><br><span class="line"><span class="string">        for(var i = 0;i&lt;city[val].length;i++)&#123;</span></span><br><span class="line"><span class="string">            html += "</span>&lt;option value=<span class="string">'"+i+"'</span>&gt;<span class="string">"+ city[val][i]+"</span>&lt;<span class="regexp">/option&gt;";</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">        console.log(html);</span></span><br><span class="line"><span class="regexp">        $("selCity").innerHTML = html;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code>练习2:=========
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"02_checkname.php"</span>&gt;</span><br><span class="line">    用户名:</span><br><span class="line">    &lt;input type=<span class="string">"text"</span> name=<span class="string">"uname"</span>&gt;</span><br><span class="line">    &lt;span id=<span class="string">'uname_show'</span>&gt;*&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input type="submit" value="验证用户名"&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>form&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>=php=02_checkname.php
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    $uname = $_REQUEST[<span class="string">'uname'</span>];</span><br><span class="line">    <span class="keyword">if</span>($uname == <span class="string">"admin"</span>)&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"用户名称已存在"</span></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">"用户名称不存在"</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h2><p>1、名词解释<br>    1、同步<br>        客户端只能等待服务器的响应<br>        ex:<br>            1、输入网址访问页面<br>            2、a标记的默认跳转<br>            3、submit 按钮的表单提交<br>    2、异步<br>        在一段时间内，可以做多件事情<br>        ex:<br>            1、用户名的重复性验证<br>            2、聊天室<br>            3、股票图<br>            4、搜索建议<br>2、ajax<br>    asynchronous javascript and xml<br>    本质：使用js提供的XMLHttpRequest对象，    异步的向服务器发送请求，并接受响应数据（格式为xml[过时]）</p>
+<pre><code>返回部分数据，可以以无刷新的效果来更改页面中的局部内容
+</code></pre><p>3、获取 AJAX核心对象 - XMLHttpRequest<br>    标准创建：var xhr = new XMLHttpRequest();<br>    IE8 以下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHttp"</span>);</span><br><span class="line"></span><br><span class="line">允许通过 <span class="built_in">window</span>.XMLHttpRequest判断浏览器是否支持XMLHttpRequest()</span><br><span class="line">返回值为:<span class="literal">null</span>时,说明不支持;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="comment">//判断浏览器是否支持XMLHttpRequest</span></span><br><span class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">    xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHttp"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(xhr);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXhr</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xhr;</span><br><span class="line">    <span class="comment">//1、声明一个xhr对象，用于保存不同浏览器中创建出来的AJAX核心对象</span></span><br><span class="line">    <span class="comment">//2、判断浏览器是否支持XMLHttpRequest</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest)&#123;</span><br><span class="line">        xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHttp"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> xhr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>4、XHR的常用属性和方法（难点）<br>    1、open()方法<br>        作用：创建请求<br>        语法：open(method,url,isAsyn)<br>        1、method<br>            string 类型<br>            请求方式；get post<br>        2、url<br>            string<br>            请求地址<br>        3、isAsyn<br>            boolean 类型<br>            指定采用同步（false）还是异步（true）的方式发送请求<br>    2、readyState -xhr的属性<br>        作用：表示xhr 对象的请求状态<br>        值：由0-5表示5 个状态<br>        0: 请求尚未初始化<br>        1: 已经打开开web的连接，正在向服务器发送请求<br>        2、请求完成<br>        3、正在接收服务器端的响应<br>        4、接收响应数据成功<br>        注意:当readyState 的值为4的时候，表示所有的响应都已经接收完毕<br>    3、status - 属性<br>        作用： 服务器的响应状态码<br>        为200是表示服务器已经正确响应<br>    4、onreadstatechange - 事件<br>        作用：当xhr的readyState 属性值发生改变的时候，要自运激发的操作。<br>        语法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//当xhr的readyState 属性值发生改变的时候要执行的操作</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//判断xhr.readyState 为4的时候，并且xhr.status为200的时候，才能获取正常的响应数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState ==<span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>)&#123;</span><br><span class="line">        <span class="comment">//可以接收响应回来的数据</span></span><br><span class="line">        <span class="comment">//responseText属性，表示服务器响应回来的文本</span></span><br><span class="line">        <span class="keyword">var</span> resText = xhr.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>5、send -方法
+    作用：发送\提交请求
+    语法：send(body)
+        body:是请求主体
+        没有请求主体的提交方式，body位置处，要写null
+        有的话写主体的数据
+</code></pre><p>5、发送异步请求的步骤<br>    1、创建/获取xhr对象<br>    2、创建请求，xhr.open()<br>    3、设置xhr的onreadystatechange 事件<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.statue ==<span class="number">200</span>)&#123;</span><br><span class="line">        xhr.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<pre><code>4、发送请求
+    xhr.send();
+
+05_textajax.php
+    &lt;?php
+        echo &quot;oneoneone 这是php回显的数据&quot;;
+    ?&gt;
+long.html
+</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function getInfo()&#123;</span><br><span class="line">    //1 创建 </span><br><span class="line">    var xhr = createXhr();</span><br><span class="line">    //2 创建请求</span><br><span class="line">    xhr.open('get',"05_textajax.php",true);</span><br><span class="line">    //3 设置 onreadystatechange（回调函数）</span><br><span class="line">    xhr.onreadystatechange=function()&#123;</span><br><span class="line">        if(xhr.readyState== 4 &amp;&amp; xhr.status ==200)&#123;</span><br><span class="line">            //接收响应数据</span><br><span class="line">            var text = xhr.responseText</span><br><span class="line">            console.log(text);</span><br><span class="line">            $("msg-show").innerHTML = text;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //4 发送请求</span><br><span class="line">    xhr.send(null);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'msg-show'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"getInfo()"</span>&gt;</span>发送异步请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="作业"><a href="#作业" class="headerlink" title="作业:"></a>作业:</h2><pre><code>1、创建htm1.html 页面，用php查询数据库，验证用户密码是否正确。
+查询数据库
+ajax异步请求 get
+
+==00_con_mysql.php
+&lt;?php
+    /*
+    连接数据库
+    ip地址
+    用户
+    密码
+    数据库
+    */
+    $conn = mysqli_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;a3c2218636677573&quot;,&quot;bplan_top&quot;);
+
+    $sql = &quot;SET NAMES UTF8&quot;;
+    mysqli_query($conn,$sql);
+?&gt;
+==00_checkUname.php
+&lt;?php
+    #1、数据库连接
+    require(&quot;00_con_mysql.php&quot;);
+    #2、接收前端传递过来的数据
+    $uname = $_REQUEST[&quot;uname&quot;];
+    #3、到数据库中验证用户名称是否存在
+    $sql = &quot;select * from xuezi where uname = &apos;$uname&apos;&quot;;
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_row($result);
+    if($row == null){
+        echo &quot;通过&quot;;
+    }else{
+        echo &quot;用户名称已存在&quot;;
+    }
+    #ALTER TABLE  `xuezi` ADD pwd VARCHAR( 20 ) NULL DEFAULT  &apos;&apos; COMMENT  &apos;用户名&apos;
+?&gt;
+==html----------
+//查询数据库校验用户名和密码  ---start
+function check_uname(){
+    console.log(&apos;11111&apos;);
+
+    var xhr = createXhr();
+    var uname = $(&apos;check_uname&apos;).value;
+    console.log(uname);
+    var url = &apos;00_checkUname.php?uname=&apos;+uname;
+    xhr.open(&quot;get&quot;,url,true);
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4 &amp;&amp; xhr.status==200){
+            $(&apos;check_uname_show&apos;).innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send(null);
+}
+//查询数据库校验用户名和密码  ---end
+
+&lt;!-- 查询数据库校验用户名和密码 start --&gt;
+&lt;fieldset&gt;
+    &lt;legend&gt;查询数据库校验用户名和密码&lt;/legend&gt;
+        用户名：&lt;input type =&apos;text&apos; id=&apos;check_uname&apos; onblur=&quot;check_uname()&quot; &gt;
+        &lt;span id=&apos;check_uname_show&apos;&gt;&lt;/span&gt;&lt;br/&gt;
+        密码：&lt;input type =&apos;password&apos; name=&quot;check_rpwd&quot;&gt;
+    &lt;/form&gt;
+&lt;/fieldset&gt;
+&lt;!-- 查询数据库校验用户名和密码 end --&gt;
+</code></pre><h1 id="使用post方式提交请求"><a href="#使用post方式提交请求" class="headerlink" title="使用post方式提交请求"></a>使用post方式提交请求</h1><pre><code>1、提交的请求数据
+    提交的请求数据需要按照指定的格式拼好，放在send()中传递
+    xhr.send(&quot;name1=value1&amp;name2=value2&quot;);
+2、设置一个请求消息头
+    POST 提交方式
+    将Content-type 的请求消息头改为application/x-www/form-urlencoded
+    在发送请求之前(post)
+    xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application/x-www-form-urlencoded&quot;);
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    连接数据库</span></span><br><span class="line"><span class="comment">    ip地址</span></span><br><span class="line"><span class="comment">    用户</span></span><br><span class="line"><span class="comment">    密码</span></span><br><span class="line"><span class="comment">    数据库</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    $conn = mysqli_connect(<span class="string">"localhost"</span>,<span class="string">"root"</span>,<span class="string">"a3c2218636677573"</span>,<span class="string">"bplan_top"</span>);</span><br><span class="line">    </span><br><span class="line">    $sql = <span class="string">"SET NAMES UTF8"</span>;</span><br><span class="line">    mysqli_query($conn,$sql);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">    #1、数据库连接</span><br><span class="line">        <span class="built_in">require</span>(<span class="string">"00_con_mysql.php"</span>);</span><br><span class="line">    #2、接收前端传递过来的数据</span><br><span class="line">        $uname = $_REQUEST[<span class="string">"uname"</span>];</span><br><span class="line">        $upwd = $_REQUEST[<span class="string">"upwd"</span>];</span><br><span class="line">    #3、到数据库中验证用户名和密码是否存在</span><br><span class="line">        $sql = <span class="string">"select * from xuezi where uname = '$uname' and pwd= '$upwd'"</span>;</span><br><span class="line">        $result = mysqli_query($conn,$sql);</span><br><span class="line">        $row = mysqli_fetch_row($result);</span><br><span class="line">        <span class="keyword">if</span>($row == <span class="literal">null</span>)&#123;</span><br><span class="line">            echo <span class="string">"用户或密码不正确"</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            echo <span class="string">"登录成功"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//校验用户名和密码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">check_uname_post</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xhr = createXhr();</span><br><span class="line">    <span class="keyword">var</span> uname = $(<span class="string">'check_uname'</span>).value;</span><br><span class="line">    <span class="keyword">var</span> upwd = $(<span class="string">'check_upwd'</span>).value;</span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">'00_checkUnameandpwd_post.php'</span></span><br><span class="line">    xhr.open(<span class="string">"post"</span>,url,<span class="literal">true</span>);</span><br><span class="line">    xhr.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span> &amp;&amp; xhr.status==<span class="number">200</span>)&#123;</span><br><span class="line">            $(<span class="string">'check_unameandpwd_show'</span>).innerHTML = xhr.responseText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.setRequestHeader(<span class="string">"Content-Type"</span>,<span class="string">"application/x-www-form-urlencoded"</span>);</span><br><span class="line"></span><br><span class="line">    xhr.send(<span class="string">"uname="</span> + uname + <span class="string">"&amp;upwd="</span> + upwd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="练习-省市级联"><a href="#练习-省市级联" class="headerlink" title="练习 省市级联"></a>练习 省市级联</h2><h3 id="1、00-province-php-生成列表中的数据"><a href="#1、00-province-php-生成列表中的数据" class="headerlink" title="1、00_province.php 生成列表中的数据"></a>1、00_province.php 生成列表中的数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=0&gt;helongjian&lt;/option&gt;</span><br><span class="line">&lt;option value=1&gt;jilings&lt;/option&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>1、在00_provice.html中，网页加载时，异步的向00_province.php发送请求，并将响应的数据填充在&lt;select&gt;中
+
+&lt;?php 
+    #1 声明一个数组并且初始化三个省份的信息
+    $array = [&quot;heilongjiang&quot;,&quot;jiling&quot;,&quot;liaoning&quot;];
+    #2 循环遍历数组，取出每个省份的信息，拼成一个字符串
+    $opts=&quot;&quot;;
+    for($i=0;$i&lt;count($array);$i++){
+        $opts.=&quot;&lt;option value=&apos;$i&apos; &gt;$array[$i]&lt;/option&gt;&quot;;
+    }
+    #3 将生成的字符串响应给客户端
+    echo $opts;
+?&gt;
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body onload=<span class="string">"loadProvince()"</span>&gt; </span><br><span class="line">        &lt;select id=<span class="string">'selProvince'</span> onchange=<span class="string">"showcity()"</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/select&gt;</span></span><br><span class="line"><span class="regexp">        &lt;select id="selCity"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>select&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">function loadProvince()&#123;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/1、获取xhr</span></span><br><span class="line"><span class="regexp">    var xhr = createXhr();</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/2、创建请求</span></span><br><span class="line"><span class="regexp">    xhr.open('get','00_province.php',true);</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/3、设置回调</span></span><br><span class="line"><span class="regexp">    xhr.onreadystatechange = function()&#123;</span></span><br><span class="line"><span class="regexp">        if(xhr.readyState==4 &amp;&amp; xhr.status==200)&#123;</span></span><br><span class="line"><span class="regexp">            $('selProvince').innerHTML = xhr.responseText;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/4、发送请求</span></span><br><span class="line"><span class="regexp">    xhr.send(null);</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<pre><code>2、在00_province2.php中创建一个二维数组，保存省份对应城市的信息
+3、根据传递过来的value值，取出对应的城市信息，拼成&lt;option&gt;响应回去并显示在下拉选项框中 
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">    $array =[</span><br><span class="line">        [<span class="string">"h1"</span>,<span class="string">"h2"</span>,<span class="string">'h3'</span>],</span><br><span class="line">        [<span class="string">'j1'</span>,<span class="string">'j2'</span>,<span class="string">'j3'</span>],</span><br><span class="line">        [<span class="string">'L1'</span>,<span class="string">'L2'</span>,<span class="string">"l3"</span>]</span><br><span class="line">    ];</span><br><span class="line">    $Province_value=$_REQUEST(<span class="string">'Province_value'</span>);</span><br><span class="line">    $opts=<span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span>($i=<span class="number">0</span>;$i&lt;count($array);$i++)&#123;</span><br><span class="line">        $opts .= <span class="string">"&lt;option value='$i'&gt;$array[$i]&lt;/option&gt;"</span></span><br><span class="line">    &#125;</span><br><span class="line">    echo $opts;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showcity</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//1、获取xhr</span></span><br><span class="line">    <span class="keyword">var</span> xhr = createXhr();</span><br><span class="line">    <span class="comment">//2、创建请求</span></span><br><span class="line">    <span class="keyword">var</span> Province_value = $(<span class="string">"selProvince"</span>).value;</span><br><span class="line">    xhr.open(<span class="string">'get'</span>,<span class="string">'00_province2.php?Province_value='</span>+Province_value,<span class="literal">true</span>);</span><br><span class="line">    <span class="comment">//3、设置回调</span></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.readyState==<span class="number">4</span> &amp;&amp; xhr.status==<span class="number">200</span>)&#123;</span><br><span class="line">            $(<span class="string">'selCity'</span>).innerHTML = xhr.responseText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//4、发送请求</span></span><br><span class="line">    xhr.send(<span class="literal">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、JSON"><a href="#2、JSON" class="headerlink" title="2、JSON"></a>2、JSON</h3><pre><code>1、什么是JSON 
+    javaScript Object Notation js对象表示法以js对象的方法来表示字符串 字符串
+2、js对象
+    用{}来表示对象
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fbb = [];</span><br><span class="line">fbb[<span class="number">0</span>] = <span class="number">121</span>;</span><br><span class="line">fbb[<span class="number">1</span>] = <span class="number">73</span>;</span><br><span class="line">fbb[<span class="number">2</span>] = <span class="number">116</span>;</span><br><span class="line"></span><br><span class="line">fbb[<span class="string">'yuwen'</span>] = <span class="number">121</span>;</span><br><span class="line">fbb[<span class="string">'shuxue'</span>] = <span class="number">73</span>;</span><br><span class="line">fbb[<span class="string">'yingyu'</span>] = <span class="number">116</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fbb_obj = &#123;</span><br><span class="line">	yuwen:<span class="number">121</span>,</span><br><span class="line">	shuxue:<span class="number">73</span>,</span><br><span class="line">	yingyu:<span class="number">116</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showObject</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//1、创建一个对象，名称为fbb,包含三个属性</span></span><br><span class="line">	<span class="keyword">var</span> fbb = &#123;</span><br><span class="line">		height:<span class="number">121</span>,</span><br><span class="line">		weight:<span class="number">73</span>,</span><br><span class="line">		gender:<span class="string">'女'</span></span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//2、打印对应属性的值</span></span><br><span class="line">	<span class="built_in">console</span>.log(fbb.yuwen);</span><br><span class="line">	<span class="built_in">console</span>.log(fbb.shuxue);</span><br><span class="line">	<span class="built_in">console</span>.log(fbb.yingyu);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建一个新的对象</span></span><br><span class="line">	<span class="keyword">var</span> ym =&#123; </span><br><span class="line">		height:<span class="number">165</span>,</span><br><span class="line">		weight:<span class="number">50</span>,</span><br><span class="line">		gender:<span class="string">"女"</span></span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">//3、声明一个数组，保存fbb 和 ym</span></span><br><span class="line">	<span class="keyword">var</span> star = [fbb,ym];</span><br><span class="line">	<span class="built_in">console</span>.log(star);</span><br><span class="line">	<span class="comment">//循环打印数组</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;star.length;i++)&#123;</span><br><span class="line">		<span class="keyword">var</span> s = star[i]; </span><br><span class="line">		<span class="built_in">console</span>.log(s.height,s.weight,s.gender);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//数组对象 明星数组</span></span><br><span class="line"><span class="keyword">var</span> star = [</span><br><span class="line">	&#123;</span><br><span class="line">		height:<span class="number">121</span>,</span><br><span class="line">		weight:<span class="number">73</span>,</span><br><span class="line">		gender:<span class="string">'女'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123; </span><br><span class="line">		height:<span class="number">165</span>,</span><br><span class="line">		weight:<span class="number">50</span>,</span><br><span class="line">		gender:<span class="string">"女"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123; </span><br><span class="line">		height:<span class="number">160</span>,</span><br><span class="line">		weight:<span class="number">49</span>,</span><br><span class="line">		gender:<span class="string">"女"</span></span><br><span class="line">	&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">//循环打印数组</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;star.length;i++)&#123;</span><br><span class="line">	<span class="keyword">var</span> s = star[i]; </span><br><span class="line">	<span class="built_in">console</span>.log(s.height,s.weight,s.gender);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>3、JSON
+    1、JSON对象
+        语法：
+            1、用一对{}来表示一个对象
+            2、对象的属性名称，必须用“”引起来，值如果也是字符串，也必须用“”引起来
+            3、属性 与 值，用:连接
+            4、多对属性 与 值之间，用，分开
+        ex:
+            var ym = &apos;{&quot;height&quot;:174,&quot;weight&quot;:50}&apos;;
+    2、JSON数组
+        1、普通数组表现：&apos;[&apos;ym&apos;,&apos;fbb&apos;,&apos;fj&apos;]&apos;;
+        2、对象的数组：
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'[</span></span><br><span class="line"><span class="string">	&#123;</span></span><br><span class="line"><span class="string">		"height":170,</span></span><br><span class="line"><span class="string">		"weight":55,</span></span><br><span class="line"><span class="string">		"geight":女</span></span><br><span class="line"><span class="string">	&#125;,</span></span><br><span class="line"><span class="string">	&#123;</span></span><br><span class="line"><span class="string">		"height":160,</span></span><br><span class="line"><span class="string">		"weight":49,</span></span><br><span class="line"><span class="string">		"geight":女</span></span><br><span class="line"><span class="string">	&#125;</span></span><br><span class="line"><span class="string">]'</span></span><br></pre></td></tr></table></figure>
+<pre><code>3、JOSN文件
+    创建一个文件，以 ***.json 作为后缀
+    该文件中的数据必须是json 格式的字符串
+    04_Pesion.json
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"name"</span>:<span class="string">"fbb"</span>,</span><br><span class="line">		<span class="string">"age"</span>:<span class="string">"40"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"女"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"name"</span>:<span class="string">"lic"</span>,</span><br><span class="line">		<span class="string">"age"</span>:<span class="string">"41"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"男"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"name"</span>:<span class="string">"ym"</span>,</span><br><span class="line">		<span class="string">"age"</span>:<span class="string">"31"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"女"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<pre><code>    04_getjson.html
+    &lt;!-- http://bplan.top/ajax_t/04_getjson.html 外网地址 --&gt;
+
+4、将JOSN字符串转成JS对象/数组
+    var p = &apos;{&quot;name&quot;:&quot;sf.z&quot;,&quot;age&quot;:25}&apos;;
+    1、使用eval()
+        var obj = eval(&quot;(&quot;+p+&quot;)&quot;);
+    2、使用JSON.parse()来解析JSON字符串得到JS对象
+        var obj = JSON.parse(p);
+    练习：
+        1、创建一个05_user.json的文件，里面包含一个数组，数组中有3个对象，每个对象包含uname,upwd,gender 属性
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"uname"</span>:<span class="string">'1'</span>,</span><br><span class="line">		<span class="string">"upwd"</span>:<span class="string">"123"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"女"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"uname"</span>:<span class="string">'2'</span>,</span><br><span class="line">		<span class="string">"upwd"</span>:<span class="string">"123"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"女"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"uname"</span>:<span class="string">'3'</span>,</span><br><span class="line">		<span class="string">"upwd"</span>:<span class="string">"123"</span>,</span><br><span class="line">		<span class="string">"gender"</span>:<span class="string">"男"</span></span><br><span class="line">	&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<pre><code>        2、创建一个05_getusers.html，使用异步的方式向user.json发送一个请求，并按以下格式打印输出数据
+        &lt;!-- http://bplan.top/ajax_t/05_getusers.html 外网地址 --&gt;
+5、在php中，可以直接将数组（）转换成JSON可笑式的字符串
+    php中通过： json_encode()将数组转换为JSON字符串
+    语法： 
+        ￥str = json_encode($array);
+    注意：如果服务器端响应回来的数据时JSON格式时，需要增加响应消息头
+    header(&quot;Content-Type:application/json&quot;);
+
+    #http://bplan.top/ajax_t/06_city.php
+    #http://bplan.top/ajax_t/07_textJSON.php
+</code></pre><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="comment">#1、增加响应消息头</span></span><br><span class="line">	header(<span class="string">"Content-Type:application/json"</span>);</span><br><span class="line">	<span class="comment">#2、声明一个普通数组，并且以 JSON 格式进行响应</span></span><br><span class="line">	$province = [<span class="string">"heilongjiang"</span>,<span class="string">'jilin'</span>,liaoning];</span><br><span class="line">	<span class="comment">#3、将数组转为json格式的字符</span></span><br><span class="line">	$str = json_encode($province);</span><br><span class="line">	<span class="comment">#4、响应给客户端</span></span><br><span class="line">	<span class="keyword">echo</span> $str;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<pre><code>作业：
+unmae 用户名  email 邮件   操作
+
+网页加载数据库内容
+
+并转换为关联数组 mysqli_fetch_all($result,MYSLQi_ASSOC)
+
+转换为json,响应组客户端
+
+在前端拼接好数据
+</code></pre><h1 id="1、XML"><a href="#1、XML" class="headerlink" title="1、XML"></a>1、XML</h1><h2 id="1、什么是xml"><a href="#1、什么是xml" class="headerlink" title="1、什么是xml"></a>1、什么是xml</h2><pre><code>eXtensible Markup Language 
+可扩展的    标记       语言
+xml的标记没有被预定义，需要自行定义
+xml的宗旨是做数据传递，而非数据显示
+</code></pre><h2 id="2、xml的语法规范"><a href="#2、xml的语法规范" class="headerlink" title="2、xml的语法规范"></a>2、xml的语法规范</h2><pre><code>xml可以独立的保存成为 **.xml 文件，也可以以字符串的形式出现(服务器端生成)
+1、xml的最顶端是xml的声明
+    &lt;?xml version=&quot;1.0&quot; encoding=&apos;uft-8&apos; ?&gt;
+练习：
+    创建一个student.xml文件，并添加xml声明
+
+    &lt;?xml version=&apos;1.0&apos; encoding=&quot;utf-8&quot; ?&gt;
+2、xml标记的语法
+    1、XML标记是成对出现，所有的标记必须要显示的结果
+        &lt;person /&gt; 错误
+        &lt;person&gt;aa    错误
+        &lt;person&gt;bb&lt;/person&gt;  正确
+    2、XML标记是严格区分大小写,开始和结束必须一致
+        &lt;person&gt;&lt;Person&gt; 错误
+        &lt;Person&gt;&lt;/Person&gt; 正确
+        &lt;perSon&gt;&lt;/perSon&gt; 正确
+    3、标记允许嵌套，注意嵌套顺序即可（与HTML一致）
+        &lt;person&gt;
+            &lt;name&gt;fbb&lt;/name&gt;
+            &lt;age&gt;11&lt;/age&gt;
+        &lt;/person&gt;
+    4、每个标记都允许自定义属性，格式等同于HTML，但属性值，必须使用引号括起来
+        &lt;person id=&quot;1001&quot; gender=&quot;male&quot;&gt;&lt;/person&gt;
+    5、每个xml文档中，有且只有一个根元素
+
+    练习：
+        1、在student.xml基础中完成
+            1、创建一对根元素 studentList
+            2、在studentList 根元素中，使用一对student 元素来表示一名学员的信息
+            3、在student 中，再分别使用三个元素来表示姓名(name),性别(gender),年龄(age),并将值写在标记中
+            4、创建3个学员的信息
+</code></pre><h2 id="3、使用-AJAX-请求-XML-文档"><a href="#3、使用-AJAX-请求-XML-文档" class="headerlink" title="3、使用 AJAX 请求 XML 文档"></a>3、使用 AJAX 请求 XML 文档</h2><pre><code>    1、要遵循AJAX的请求步骤
+        1、创建，获取 xhr
+        2、创建请求
+        3、设置回调
+        4、发送请求
+    使用 xhr.responseXML 来获取响应的数据,返回的是XML文档对象
+练习：
+    在student.xml基础上，使用AJAX向student.xml发送请求，并将响应结果(responseXML)打印在控制台上
+    &lt;!-- http://bplan.top/ajax_t/00_10_student.xml--&gt;
+    &lt;!-- http://bplan.top/ajax_t/00_10_student.html--&gt;
+</code></pre><h2 id="4、解析xml文档内容"><a href="#4、解析xml文档内容" class="headerlink" title="4、解析xml文档内容"></a>4、解析xml文档内容</h2><pre><code>1、核心
+    elem.getElementByTagName(&quot;标签名&quot;)；
+    elem: 表示获取范围
+    返回值：返回一个包含指定元素的“类数组”:
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlDoc = xhr.responseXML;</span><br><span class="line">xmlDoc.getElementsByTagName(<span class="string">"student"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> studnetList = xmlDoc.getElementsByTagName(<span class="string">"studentList"</span>);</span><br></pre></td></tr></table></figure>
+<pre><code>2、获取元素中的文本
+    elem.innerHTML
+</code></pre><h2 id="5、在PHP中返回xml格式的字符串"><a href="#5、在PHP中返回xml格式的字符串" class="headerlink" title="5、在PHP中返回xml格式的字符串"></a>5、在PHP中返回xml格式的字符串</h2><pre><code>1、必须增加响应消息头
+    header(&quot;Content-Type:application/xml&quot;);
+2、按照xml的语法结构，拼xml的字符串,再响应给客户端
+</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$xml = <span class="string">"&lt;?xml version='1.0' encoding='utf-8' ?&gt;"</span>;</span><br><span class="line">$xml .=<span class="string">"&lt;studentList&gt;"</span>;</span><br><span class="line">$xml .=<span class="string">"&lt;/studentList&gt;"</span>;</span><br></pre></td></tr></table></figure>
+<pre><code>练习:1、在03_php_xml.php中响应报文
+    2、在03_php_xml.html使用AJAX响应数据
+</code></pre></div><div class="tags"><a href="/tags/记录/">记录</a><a href="/tags/ajax/">ajax</a></div><div class="post-nav"><a class="pre" href="/2023/01/19/reading/vue3/">用vue3脚手架搭建开发框架</a><a class="next" href="/2023/01/16/web/">常用网址</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/recode/">recode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/张永枫/">张永枫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/蔡向炜/">蔡向炜</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/软件开发工具/" style="font-size: 15px;">软件开发工具</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/erlang/" style="font-size: 15px;">erlang</a> <a href="/tags/git-lfs/" style="font-size: 15px;">git lfs</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/常用网址/" style="font-size: 15px;">常用网址</a> <a href="/tags/网址/" style="font-size: 15px;">网址</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/recode/" style="font-size: 15px;">recode</a> <a href="/tags/Activity/" style="font-size: 15px;">Activity</a> <a href="/tags/yaws/" style="font-size: 15px;">yaws</a> <a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/小程序/" style="font-size: 15px;">小程序</a> <a href="/tags/更新/" style="font-size: 15px;">更新</a> <a href="/tags/记录/" style="font-size: 15px;">记录</a> <a href="/tags/plan/" style="font-size: 15px;">plan</a> <a href="/tags/file/" style="font-size: 15px;">file</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/vue3/" style="font-size: 15px;">vue3</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/zhangyongfeng1" title="zyf" target="_blank">zyf</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">zhangyongfeng.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

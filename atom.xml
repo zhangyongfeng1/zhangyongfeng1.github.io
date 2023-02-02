@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>zhangyongfeng</title>
+  
+  <subtitle>zhangyongfeng&#39;s blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://zhangyongfeng1.github.io/"/>
+  <updated>2023-02-02T09:06:51.303Z</updated>
+  <id>https://zhangyongfeng1.github.io/</id>
+  
+  <author>
+    <name>zhangyongfeng</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://zhangyongfeng1.github.io/2023/02/02/reading/vue3_ts/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/02/reading/vue3_ts/</id>
+    <published>2023-02-02T09:06:36.573Z</published>
+    <updated>2023-02-02T09:06:51.303Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>用vue3脚手架搭建开发框架</title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/19/reading/vue3/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/19/reading/vue3/</id>
+    <published>2023-01-19T10:00:00.000Z</published>
+    <updated>2023-02-02T09:53:59.488Z</updated>
+    
+    <summary type="html">
+    
+      我们每次搭建一个新的项目时，总要去配置那些常用的工具模块。重复去配置就会觉得非常麻烦，当然会有很多开源的脚手架，比如vue的脚手架vue-cli等，脚手架为我们完成项目初始化的基础配置和一些必要的模块引入及配置，我们在此基础上再做项目和依赖的定制就省了很多事，懒人必备
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="node" scheme="https://zhangyongfeng1.github.io/tags/node/"/>
+    
+      <category term="npm" scheme="https://zhangyongfeng1.github.io/tags/npm/"/>
+    
+      <category term="vue3" scheme="https://zhangyongfeng1.github.io/tags/vue3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ajax小记</title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/16/ajax/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/16/ajax/</id>
+    <published>2023-01-16T04:12:12.000Z</published>
+    <updated>2023-01-17T07:47:56.727Z</updated>
+    
+    <summary type="html">
+    
+      ajax
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="记录" scheme="https://zhangyongfeng1.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+      <category term="ajax" scheme="https://zhangyongfeng1.github.io/tags/ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用网址</title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/16/web/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/16/web/</id>
+    <published>2023-01-16T04:12:12.000Z</published>
+    <updated>2023-01-17T07:47:53.113Z</updated>
+    
+    <summary type="html">
+    
+      记录常用网站
+    
+    </summary>
+    
+      <category term="recode" scheme="https://zhangyongfeng1.github.io/categories/recode/"/>
+    
+    
+      <category term="常用网址" scheme="https://zhangyongfeng1.github.io/tags/%E5%B8%B8%E7%94%A8%E7%BD%91%E5%9D%80/"/>
+    
+      <category term="网址" scheme="https://zhangyongfeng1.github.io/tags/%E7%BD%91%E5%9D%80/"/>
+    
+      <category term="web" scheme="https://zhangyongfeng1.github.io/tags/web/"/>
+    
+      <category term="recode" scheme="https://zhangyongfeng1.github.io/tags/recode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小程序发布流程</title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/13/weixing/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/13/weixing/</id>
+    <published>2023-01-13T04:00:00.000Z</published>
+    <updated>2023-01-13T03:33:48.060Z</updated>
+    
+    <summary type="html">
+    
+      小程序发布流程
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="小程序" scheme="https://zhangyongfeng1.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用hexo和GitHub搭建属于自己的个人静态网站</title>
+    <link href="https://zhangyongfeng1.github.io/2023/01/12/blog_hexo_GitHub_2/"/>
+    <id>https://zhangyongfeng1.github.io/2023/01/12/blog_hexo_GitHub_2/</id>
+    <published>2023-01-12T02:05:00.000Z</published>
+    <updated>2023-01-17T07:45:36.198Z</updated>
+    
+    <summary type="html">
+    
+      搭建静态网站参考教程
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="hexo" scheme="https://zhangyongfeng1.github.io/tags/hexo/"/>
+    
+      <category term="GitHub" scheme="https://zhangyongfeng1.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>软件开发工具-第二章-软件开发过程及其组织</title>
+    <link href="https://zhangyongfeng1.github.io/2019/05/14/soft_dev_tool_2/"/>
+    <id>https://zhangyongfeng1.github.io/2019/05/14/soft_dev_tool_2/</id>
+    <published>2019-05-14T02:06:00.000Z</published>
+    <updated>2019-05-14T02:26:26.269Z</updated>
+    
+    <summary type="html">
+    
+      软件开发过程及其组织
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="软件开发工具" scheme="https://zhangyongfeng1.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 开发环境及工具介绍</title>
+    <link href="https://zhangyongfeng1.github.io/2019/05/10/web_react_1/"/>
+    <id>https://zhangyongfeng1.github.io/2019/05/10/web_react_1/</id>
+    <published>2019-05-10T04:00:00.000Z</published>
+    <updated>2019-05-10T07:23:25.191Z</updated>
+    
+    <summary type="html">
+    
+      React 开发环境及工具介绍
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="javascript" scheme="https://zhangyongfeng1.github.io/tags/javascript/"/>
+    
+      <category term="react" scheme="https://zhangyongfeng1.github.io/tags/react/"/>
+    
+      <category term="node" scheme="https://zhangyongfeng1.github.io/tags/node/"/>
+    
+      <category term="npm" scheme="https://zhangyongfeng1.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javaScript_ES 6 简介</title>
+    <link href="https://zhangyongfeng1.github.io/2019/05/09/javascript_es6_1/"/>
+    <id>https://zhangyongfeng1.github.io/2019/05/09/javascript_es6_1/</id>
+    <published>2019-05-09T04:00:00.000Z</published>
+    <updated>2019-05-09T07:48:28.159Z</updated>
+    
+    <summary type="html">
+    
+      javaScript_ES 6 简介
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="javascript" scheme="https://zhangyongfeng1.github.io/tags/javascript/"/>
+    
+      <category term="ES6" scheme="https://zhangyongfeng1.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git lfs入门</title>
+    <link href="https://zhangyongfeng1.github.io/2019/05/07/git_lfs1/"/>
+    <id>https://zhangyongfeng1.github.io/2019/05/07/git_lfs1/</id>
+    <published>2019-05-07T04:00:00.000Z</published>
+    <updated>2019-05-07T03:34:59.472Z</updated>
+    
+    <summary type="html">
+    
+      gif lfs入门
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="git lfs" scheme="https://zhangyongfeng1.github.io/tags/git-lfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 入门</title>
+    <link href="https://zhangyongfeng1.github.io/2019/05/06/git_1/"/>
+    <id>https://zhangyongfeng1.github.io/2019/05/06/git_1/</id>
+    <published>2019-05-06T04:00:00.000Z</published>
+    <updated>2019-05-07T02:19:37.808Z</updated>
+    
+    <summary type="html">
+    
+      git 入门
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="git" scheme="https://zhangyongfeng1.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javaScript_基础1</title>
+    <link href="https://zhangyongfeng1.github.io/2018/06/26/javascirpt_base1/"/>
+    <id>https://zhangyongfeng1.github.io/2018/06/26/javascirpt_base1/</id>
+    <published>2018-06-26T06:27:25.000Z</published>
+    <updated>2019-05-07T02:19:37.808Z</updated>
+    
+    <summary type="html">
+    
+      javaScript基础示例
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="javascript" scheme="https://zhangyongfeng1.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>erlang-实战-对文件内容进行处理</title>
+    <link href="https://zhangyongfeng1.github.io/2018/06/26/erlang_do1/"/>
+    <id>https://zhangyongfeng1.github.io/2018/06/26/erlang_do1/</id>
+    <published>2018-06-26T06:27:25.000Z</published>
+    <updated>2019-05-07T02:19:37.807Z</updated>
+    
+    <summary type="html">
+    
+      对文件进行处理,将 xml报文格式的报文转为lua 去取值
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="https://zhangyongfeng1.github.io/tags/erlang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>erlang-基本语法_2、模块和函数、内置函数、在erlang shell中运行文件</title>
+    <link href="https://zhangyongfeng1.github.io/2018/06/12/erlang_base2/"/>
+    <id>https://zhangyongfeng1.github.io/2018/06/12/erlang_base2/</id>
+    <published>2018-06-12T06:27:25.000Z</published>
+    <updated>2023-01-06T07:42:00.133Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#写在前面&quot;&gt;写在前面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#模块和函数&quot;&gt;模块和函数&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#内建函数-bif&quot;&gt;内建函数 BIF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="https://zhangyongfeng1.github.io/tags/erlang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>erlang-基本语法_1、io:format输出、基本数据类型</title>
+    <link href="https://zhangyongfeng1.github.io/2018/06/11/erlang_base1/"/>
+    <id>https://zhangyongfeng1.github.io/2018/06/11/erlang_base1/</id>
+    <published>2018-06-11T05:27:25.000Z</published>
+    <updated>2019-05-07T02:19:37.807Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#写在前面&quot;&gt;写在前面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#介绍&quot;&gt;介绍&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#为什么要用到erlang&quot;&gt;.为什么要用到erlang？&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="https://zhangyongfeng1.github.io/tags/erlang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_6.数据存储_1.文件存储</title>
+    <link href="https://zhangyongfeng1.github.io/2018/05/02/android_store1/"/>
+    <id>https://zhangyongfeng1.github.io/2018/05/02/android_store1/</id>
+    <published>2018-05-02T04:27:25.000Z</published>
+    <updated>2019-05-07T02:19:37.807Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studi为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
+    
+      <category term="file" scheme="https://zhangyongfeng1.github.io/tags/file/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建基于yaws的erlang_web服务_1_环境搭建</title>
+    <link href="https://zhangyongfeng1.github.io/2018/04/26/yaws.web1/"/>
+    <id>https://zhangyongfeng1.github.io/2018/04/26/yaws.web1/</id>
+    <published>2018-04-26T04:51:25.000Z</published>
+    <updated>2019-05-07T02:19:37.808Z</updated>
+    
+    <summary type="html">
+    
+      搭建基于yaws的erlang_web服务
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="erlang" scheme="https://zhangyongfeng1.github.io/tags/erlang/"/>
+    
+      <category term="web" scheme="https://zhangyongfeng1.github.io/tags/web/"/>
+    
+      <category term="yaws" scheme="https://zhangyongfeng1.github.io/tags/yaws/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_4-活动的生命周期探究</title>
+    <link href="https://zhangyongfeng1.github.io/2018/04/10/android_activity4/"/>
+    <id>https://zhangyongfeng1.github.io/2018/04/10/android_activity4/</id>
+    <published>2018-04-10T08:25:25.000Z</published>
+    <updated>2019-05-07T02:19:37.807Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studi为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
+    
+      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_3-Intent和数据传递</title>
+    <link href="https://zhangyongfeng1.github.io/2018/04/01/android_activity3/"/>
+    <id>https://zhangyongfeng1.github.io/2018/04/01/android_activity3/</id>
+    <published>2018-04-01T08:25:25.000Z</published>
+    <updated>2019-05-07T02:19:37.806Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
+    
+      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android_Activity_3-活动括展</title>
+    <link href="https://zhangyongfeng1.github.io/2018/03/27/android_activity2/"/>
+    <id>https://zhangyongfeng1.github.io/2018/03/27/android_activity2/</id>
+    <published>2018-03-27T07:25:25.000Z</published>
+    <updated>2019-05-07T02:19:37.806Z</updated>
+    
+    <summary type="html">
+    
+      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
+    
+      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
+    
+  </entry>
+  
+</feed>
