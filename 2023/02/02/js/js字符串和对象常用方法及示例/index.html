@@ -1,0 +1,124 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="https://zhangyongfeng1.github.io/"><title>js字符串和对象常用方法及示例（更新中） | zhangyongfeng</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">js字符串和对象常用方法及示例（更新中）</h1><a id="logo" href="/.">zhangyongfeng</a><p class="description">zhangyongfeng's blog</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">js字符串和对象常用方法及示例（更新中）</h1><div class="post-meta">Feb 2, 2023<span> | </span><span class="category"><a href="/categories/张永枫/">张永枫</a></span></div><div class="post-content"><!-- TOC -->
+<ul>
+<li><a href="#字符串常用的方法">一、字符串常用的方法</a></li>
+<li><a href="#数组常用的方法">二、数组常用的方法</a><ul>
+<li><a href="#改变原数组的方法">1、改变原数组的方法</a></li>
+<li><a href="#不改变原数组的方法">2、不改变原数组的方法</a></li>
+</ul>
+</li>
+<li><a href="#对象常用的方法">三、对象常用的方法</a></li>
+<li><a href="#写在后面">四、写在后面</a><!-- /TOC -->
+</li>
+</ul>
+<h2 id="字符串常用的方法"><a href="#字符串常用的方法" class="headerlink" title="字符串常用的方法"></a>字符串常用的方法</h2><hr>
+<p>字符串</p>
+<h2 id="数组常用的方法"><a href="#数组常用的方法" class="headerlink" title="数组常用的方法"></a>数组常用的方法</h2><hr>
+<h3 id="改变原数组的方法"><a href="#改变原数组的方法" class="headerlink" title="改变原数组的方法"></a>改变原数组的方法</h3><h4 id="1、push-末尾添加数组"><a href="#1、push-末尾添加数组" class="headerlink" title="1、push()末尾添加数组"></a>1、push()末尾添加数组</h4><blockquote>
+<ul>
+<li>语法:数组名:push(数组)</li>
+<li>作用:往数组末尾添加数据</li>
+<li>返回值:这个数组的长度<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// push</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>];</span><br><span class="line"><span class="keyword">var</span> res = arr.push(<span class="number">20</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [10, 20, 30, 40, 20]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="2、pop-末尾出删除数据"><a href="#2、pop-末尾出删除数据" class="headerlink" title="2、pop()末尾出删除数据"></a>2、pop()末尾出删除数据</h4><blockquote>
+<ul>
+<li>语法:数组名.pop()</li>
+<li>作用:从数组的末尾删了一个数据</li>
+<li>返回值: 删除的数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//pop</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>];</span><br><span class="line"><span class="keyword">var</span> res = arr.pop()</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [10,20,30]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// 40</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="3、unshift-头部添加数据"><a href="#3、unshift-头部添加数据" class="headerlink" title="3、unshift()头部添加数据"></a>3、unshift()头部添加数据</h4><blockquote>
+<ul>
+<li>语法:数组名.unshift(数据)</li>
+<li>作用:就是在数组的头部添加数据</li>
+<li>返回值:就是数组的长度<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// unshift</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>];</span><br><span class="line"><span class="keyword">var</span> res = arr.unshift(<span class="number">99</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [99,10,20,30,40]</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="4、shift-头部删除数据"><a href="#4、shift-头部删除数据" class="headerlink" title="4、shift()头部删除数据"></a>4、shift()头部删除数据</h4><blockquote>
+<ul>
+<li>语法:数组名.shift()</li>
+<li>作用:头部删了一个数据</li>
+<li>返回值:删除数据第一个数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//shift</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>];</span><br><span class="line"><span class="keyword">var</span> res = arr.shift();</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">// [20,30,40];</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="5、reverse-翻转数组"><a href="#5、reverse-翻转数组" class="headerlink" title="5、reverse()翻转数组"></a>5、reverse()翻转数组</h4><blockquote>
+<ul>
+<li>语法:数组名.reverse();</li>
+<li>作用:翻转数组</li>
+<li>返回值: 返回翻转好的数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//reverse</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.reverse();</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//[40,30,20,10]</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//[40,30,20,10]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="6、sort-排序"><a href="#6、sort-排序" class="headerlink" title="6、sort()排序"></a>6、sort()排序</h4><blockquote>
+<ul>
+<li>语法1:数组名.sort();//按照位排序</li>
+<li>语法2:数组名.sort(function(a,b{return a-b})// 会正序排序</li>
+<li>语法3:数组名.sort(function(a,b){return b-a})// 会倒序排序<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sort()</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">63</span>,<span class="number">48</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">11</span>]</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[ 11, 2, 4, 48, 5, 63]</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span>(a-b)&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [2,3,4,11,48,63]</span></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span>(b-a)&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [63,48,11,4,3,2]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="7、splice-截取数组"><a href="#7、splice-截取数组" class="headerlink" title="7、splice()截取数组"></a>7、splice()截取数组</h4><blockquote>
+<ul>
+<li>语法1:数组.splice(开始索引,多少个)</li>
+<li>作用:用来截取数组的</li>
+<li>返回值:返回一个截取的新数组</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>语法2:数组.splice(开始索引,多少个,要插入的数据)</li>
+<li>作用:删除指定的数据,插入数据</li>
+<li>注意:用开始索引开始</li>
+<li>返回值:是一个新的数据<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//splice() 语法一</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">63</span>,<span class="number">48</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">75</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.splice(<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[2,5,4,75]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">//[63,48] </span></span><br><span class="line"><span class="comment">//*******************</span></span><br><span class="line"><span class="comment">//splice() 语法二</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">63</span>,<span class="number">48</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">75</span>];</span><br><span class="line"><span class="keyword">var</span> res = arr.splice(<span class="number">1</span>,<span class="number">1</span>,<span class="number">99</span>,<span class="number">88</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [2,99,88,48,5,4,75]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// [63]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="不改变原数组的方法"><a href="#不改变原数组的方法" class="headerlink" title="不改变原数组的方法"></a>不改变原数组的方法</h3><h4 id="1-concat-合并数组"><a href="#1-concat-合并数组" class="headerlink" title="1.concat() 合并数组"></a>1.concat() 合并数组</h4><blockquote>
+<ul>
+<li>语法:数组名.concat(数据)</li>
+<li>作用:合并数组</li>
+<li>返回值:一个新的数组<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//concat 示例1</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">10</span>,<span class="number">30</span>,<span class="number">50</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.concat(<span class="number">20</span>,<span class="string">"小敏"</span>,<span class="number">50</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br><span class="line"><span class="built_in">console</span>.log(res);</span><br><span class="line"><span class="comment">//示例2</span></span><br><span class="line"><span class="keyword">var</span> a = [<span class="string">"google"</span>,<span class="string">"taobao"</span>];</span><br><span class="line"><span class="keyword">var</span> b = [<span class="string">"jingdong"</span>,<span class="string">"xiaomi"</span>];</span><br><span class="line"><span class="keyword">var</span> c = a.concat(b);</span><br><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//["google","taobao","jingdong","xiaomi"]</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="2-join-数组转字符串"><a href="#2-join-数组转字符串" class="headerlink" title="2.join() 数组转字符串"></a>2.join() 数组转字符串</h4><blockquote>
+<ul>
+<li>语法:数组名.join(连接符)</li>
+<li>作用:就是把一个数组转成字符串</li>
+<li>返回值:字符串<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line"><span class="keyword">var</span> res = arr.join(<span class="string">"+"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">//[10, 20, 30, 40, 50]</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//10+20+30+40+50</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="3-slice-截取数据的一部分数据"><a href="#3-slice-截取数据的一部分数据" class="headerlink" title="3.slice()截取数据的一部分数据"></a>3.slice()截取数据的一部分数据</h4><blockquote>
+<ul>
+<li>语法:数组名.slice(开始索引,结束索引)</li>
+<li>作用:就是截取数组中的一部分数据</li>
+<li>返回值:新的数组</li>
+<li>注意: 包前不包后 包含开始索引不包含结束索引<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//slice </span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line">res = arr.slice(<span class="number">1</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//[10,20,30,40,50]</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//[20, 30] //不包含 对应3的索引</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="4-indexOf-从左检查数组中有没有这个数值"><a href="#4-indexOf-从左检查数组中有没有这个数值" class="headerlink" title="4.indexOf 从左检查数组中有没有这个数值"></a>4.indexOf 从左检查数组中有没有这个数值</h4><blockquote>
+<ul>
+<li>语法一:数组名.indexOf(要查询的数据)</li>
+<li>作用:检查这个数组中有没有该数据，如果有就返回该数据第一次出现在索引，如果没有返回-1</li>
+<li>语法二:数组名.indexOf(要查询的数据,开始索引)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//indexOf 语法一</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>];</span><br><span class="line">res= arr.indexOf(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [10,20,30,40,50]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// 0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h4 id="5-lastIndexOf-从右检查数组中有没有这个数值"><a href="#5-lastIndexOf-从右检查数组中有没有这个数值" class="headerlink" title="5.lastIndexOf 从右检查数组中有没有这个数值"></a>5.lastIndexOf 从右检查数组中有没有这个数值</h4><blockquote>
+<ul>
+<li>语法一:数组名.lastIndexOf(要查询的数据)</li>
+<li>作用:检查该数组有没有该数据，如果有就返回该数据第一次出现在索引，如果没有返回-1</li>
+<li>语法二:数组名.lastIndexOf(要查询的数据,开始索引)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//lastIndexOf 语法一</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>];</span><br><span class="line">res = arr.lastIndexOf(<span class="number">50</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// 10,20,30,40,50]</span></span><br><span class="line"><span class="built_in">console</span>.log(res); <span class="comment">// 4</span></span><br><span class="line"><span class="comment">// *************</span></span><br><span class="line"><span class="comment">//lastIndexOf 语法二</span></span><br><span class="line"><span class="keyword">var</span> arr =[<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>]</span><br><span class="line">res = arr.lastIndexOf(<span class="number">30</span>,<span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//[10, 20, 30, 40, 50]</span></span><br><span class="line"><span class="built_in">console</span>.log(res);<span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h2 id="对象常用的方法"><a href="#对象常用的方法" class="headerlink" title="对象常用的方法"></a>对象常用的方法</h2><hr>
+<p>object.</p>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p><a href="https://blog.csdn.net/weixin_51338875/article/details/127820757" target="_blank" rel="noopener">js数组常用方法（19种）|你会的到底有多少呢？</a></p>
+</div><div class="tags"><a href="/tags/js/">js</a></div><div class="post-nav"><a class="pre" href="/2023/02/02/study/Web前端Promise教程从入门到精通/">Web前端Promise教程从入门到精通</a><a class="next" href="/2023/01/16/ajax/">ajax小记</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/recode/">recode</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/张永枫/">张永枫</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/蔡向炜/">蔡向炜</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/react/" style="font-size: 15px;">react</a> <a href="/tags/android/" style="font-size: 15px;">android</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/erlang/" style="font-size: 15px;">erlang</a> <a href="/tags/git-lfs/" style="font-size: 15px;">git lfs</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/软件开发工具/" style="font-size: 15px;">软件开发工具</a> <a href="/tags/常用网址/" style="font-size: 15px;">常用网址</a> <a href="/tags/网址/" style="font-size: 15px;">网址</a> <a href="/tags/web/" style="font-size: 15px;">web</a> <a href="/tags/recode/" style="font-size: 15px;">recode</a> <a href="/tags/yaws/" style="font-size: 15px;">yaws</a> <a href="/tags/Activity/" style="font-size: 15px;">Activity</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/更新/" style="font-size: 15px;">更新</a> <a href="/tags/记录/" style="font-size: 15px;">记录</a> <a href="/tags/plan/" style="font-size: 15px;">plan</a> <a href="/tags/小程序/" style="font-size: 15px;">小程序</a> <a href="/tags/file/" style="font-size: 15px;">file</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/js/" style="font-size: 15px;">js</a> <a href="/tags/vue3/" style="font-size: 15px;">vue3</a> <a href="/tags/ts/" style="font-size: 15px;">ts</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/Promise/" style="font-size: 15px;">Promise</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://github.com/zhangyongfeng1" title="zyf" target="_blank">zyf</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">zhangyongfeng.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

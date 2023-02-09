@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zhangyongfeng1.github.io/"/>
-  <updated>2023-02-02T09:06:51.303Z</updated>
+  <updated>2023-02-09T07:26:26.333Z</updated>
   <id>https://zhangyongfeng1.github.io/</id>
   
   <author>
@@ -18,12 +18,21 @@
   
   <entry>
     <title></title>
-    <link href="https://zhangyongfeng1.github.io/2023/02/02/reading/vue3_ts/"/>
-    <id>https://zhangyongfeng1.github.io/2023/02/02/reading/vue3_ts/</id>
-    <published>2023-02-02T09:06:36.573Z</published>
-    <updated>2023-02-02T09:06:51.303Z</updated>
+    <link href="https://zhangyongfeng1.github.io/2023/02/08/metting/metting/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/08/metting/metting/</id>
+    <published>2023-02-08T01:36:13.782Z</published>
+    <updated>2023-02-09T07:26:26.333Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一、css&lt;br&gt;1、如何修改子组件里面的样式&lt;br&gt;可以通过深度作用选择器 /deep/ 或&amp;gt;&amp;gt;&amp;gt;&lt;/p&gt;
+&lt;p&gt;2、scoped
+        
+      
     
     </summary>
     
@@ -31,11 +40,33 @@
   </entry>
   
   <entry>
+    <title>Vue3+TS 快速上手（更新中）</title>
+    <link href="https://zhangyongfeng1.github.io/2023/02/07/reading/vue3_ts/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/07/reading/vue3_ts/</id>
+    <published>2023-02-07T04:12:12.000Z</published>
+    <updated>2023-02-07T07:01:50.870Z</updated>
+    
+    <summary type="html">
+    
+      Vue3+TS 快速上手
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="vue3" scheme="https://zhangyongfeng1.github.io/tags/vue3/"/>
+    
+      <category term="ts" scheme="https://zhangyongfeng1.github.io/tags/ts/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用vue3脚手架搭建开发框架</title>
-    <link href="https://zhangyongfeng1.github.io/2023/01/19/reading/vue3/"/>
-    <id>https://zhangyongfeng1.github.io/2023/01/19/reading/vue3/</id>
-    <published>2023-01-19T10:00:00.000Z</published>
-    <updated>2023-02-02T09:53:59.488Z</updated>
+    <link href="https://zhangyongfeng1.github.io/2023/02/02/reading/vue3/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/02/reading/vue3/</id>
+    <published>2023-02-02T10:00:00.000Z</published>
+    <updated>2023-02-02T10:02:16.256Z</updated>
     
     <summary type="html">
     
@@ -51,6 +82,48 @@
       <category term="npm" scheme="https://zhangyongfeng1.github.io/tags/npm/"/>
     
       <category term="vue3" scheme="https://zhangyongfeng1.github.io/tags/vue3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web前端Promise教程从入门到精通</title>
+    <link href="https://zhangyongfeng1.github.io/2023/02/02/study/Web%E5%89%8D%E7%AB%AFPromise%E6%95%99%E7%A8%8B%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9A/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/02/study/Web前端Promise教程从入门到精通/</id>
+    <published>2023-02-02T04:12:12.000Z</published>
+    <updated>2023-02-03T09:38:01.648Z</updated>
+    
+    <summary type="html">
+    
+      Web前端Promise教程从入门到精通
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="Web" scheme="https://zhangyongfeng1.github.io/tags/Web/"/>
+    
+      <category term="Promise" scheme="https://zhangyongfeng1.github.io/tags/Promise/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js字符串和对象常用方法及示例（更新中）</title>
+    <link href="https://zhangyongfeng1.github.io/2023/02/02/js/js%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E7%A4%BA%E4%BE%8B/"/>
+    <id>https://zhangyongfeng1.github.io/2023/02/02/js/js字符串和对象常用方法及示例/</id>
+    <published>2023-02-02T04:12:12.000Z</published>
+    <updated>2023-02-09T10:19:03.258Z</updated>
+    
+    <summary type="html">
+    
+      js字符串、数组、对象常用方法及示例
+    
+    </summary>
+    
+      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
+    
+    
+      <category term="js" scheme="https://zhangyongfeng1.github.io/tags/js/"/>
     
   </entry>
   
@@ -397,72 +470,6 @@
       <category term="web" scheme="https://zhangyongfeng1.github.io/tags/web/"/>
     
       <category term="yaws" scheme="https://zhangyongfeng1.github.io/tags/yaws/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android_Activity_4-活动的生命周期探究</title>
-    <link href="https://zhangyongfeng1.github.io/2018/04/10/android_activity4/"/>
-    <id>https://zhangyongfeng1.github.io/2018/04/10/android_activity4/</id>
-    <published>2018-04-10T08:25:25.000Z</published>
-    <updated>2019-05-07T02:19:37.807Z</updated>
-    
-    <summary type="html">
-    
-      本文是以Android Studi为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
-    
-    </summary>
-    
-      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
-    
-    
-      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
-    
-      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android_Activity_3-Intent和数据传递</title>
-    <link href="https://zhangyongfeng1.github.io/2018/04/01/android_activity3/"/>
-    <id>https://zhangyongfeng1.github.io/2018/04/01/android_activity3/</id>
-    <published>2018-04-01T08:25:25.000Z</published>
-    <updated>2019-05-07T02:19:37.806Z</updated>
-    
-    <summary type="html">
-    
-      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
-    
-    </summary>
-    
-      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
-    
-    
-      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
-    
-      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android_Activity_3-活动括展</title>
-    <link href="https://zhangyongfeng1.github.io/2018/03/27/android_activity2/"/>
-    <id>https://zhangyongfeng1.github.io/2018/03/27/android_activity2/</id>
-    <published>2018-03-27T07:25:25.000Z</published>
-    <updated>2019-05-07T02:19:37.806Z</updated>
-    
-    <summary type="html">
-    
-      本文是以Android Studio为开发工具，&lt;&lt;第一行代码Anroid第2版&gt;&gt; 为学习指导书籍的学习记录
-    
-    </summary>
-    
-      <category term="张永枫" scheme="https://zhangyongfeng1.github.io/categories/%E5%BC%A0%E6%B0%B8%E6%9E%AB/"/>
-    
-    
-      <category term="android" scheme="https://zhangyongfeng1.github.io/tags/android/"/>
-    
-      <category term="Activity" scheme="https://zhangyongfeng1.github.io/tags/Activity/"/>
     
   </entry>
   
